@@ -222,7 +222,13 @@ document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
 // ==========================================
 // AUTOCOMPLETE
 // ==========================================
-const cidadesPR = ['Guarapuava', 'Curitiba', 'Londrina', 'Maringá', 'Cascavel'];
+const cidadesPR = [
+    'Guarapuava', 'Curitiba', 'Londrina', 'Maringá', 'Cascavel', 
+    'Ponta Grossa', 'Foz do Iguaçu', 'Toledo', 'Paranavaí', 
+    'Campo Mourão', 'Irati', 'Castro', 'Prudentópolis', 
+    'Pato Branco', 'Francisco Beltrão', 'Paranaguá', 'Umuarama'
+];
+
 const inputCidade = document.getElementById('cidadeInput');
 const sugestoes = document.getElementById('sugestoesCidade');
 
