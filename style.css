@@ -1,9 +1,4 @@
-/* RESET GLOBAL */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -12,7 +7,6 @@ body {
     overflow-x: hidden;
 }
 
-/* INTRO SCREEN */
 #intro-screen {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100vh;
@@ -22,29 +16,77 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    transition: 1s;
+    transition: 1s ease-in-out;
 }
 
-#intro-screen h1 { font-size: 3.5rem; color: #00ff88; margin-bottom: 10px; }
+#intro-screen h1 { font-size: 4rem; color: #00ff88; text-shadow: 0 0 20px rgba(0,255,136,0.5); }
 
-/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 5%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0; z-index: 900;
+    position: sticky; top: 0; z-index: 999;
 }
 
-/* BOTÕES */
+.container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+
+.diagnostico-box {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: visible; /* Necessário para ver a lista flutuando */
+}
+
+.busca-cidade {
+    position: relative;
+    max-width: 550px;
+    margin: 0 auto 30px auto;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,255,136,0.3);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 16px;
+}
+
+/* O SCROLL INTERNO QUE VOCÊ PEDIU */
+#sugestoesCidade {
+    position: absolute;
+    top: 105%; left: 0; width: 100%;
+    max-height: 220px;
+    overflow-y: auto;
+    background: #0d2114;
+    border: 1px solid #00ff88;
+    border-radius: 12px;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.sugestao-item {
+    padding: 12px 20px;
+    text-align: left;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sugestao-item:hover { background: #00ff88; color: #07140b; }
+
 .btn-agro {
     background: #00ff88;
     color: #07140b;
-    padding: 15px 35px;
-    border: none;
+    padding: 15px 40px;
     border-radius: 50px;
+    border: none;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
@@ -52,58 +94,13 @@ body {
 
 .btn-agro:hover { transform: scale(1.05); background: white; }
 
-/* DIAGNÓSTICO BOX */
-.container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-
-.diagnostico-box {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 25px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    position: relative;
-    overflow: visible; /* Permite ver a lista de cidades */
+.resultado-hero {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(0,255,136,0.1);
+    border-radius: 20px;
+    border-left: 5px solid #00ff88;
+    text-align: left;
 }
 
-/* AUTOCOMPLETE (O QUE VOCÊ PEDIU) */
-.busca-cidade {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 20px auto;
-}
-
-input, select {
-    width: 100%;
-    padding: 15px;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid #00ff88;
-    color: white;
-    border-radius: 10px;
-    margin-top: 5px;
-}
-
-#sugestoesCidade {
-    position: absolute;
-    top: 100%; left: 0; width: 100%;
-    max-height: 200px; /* Altura máxima com scroll */
-    overflow-y: auto;
-    background: #0a1f12;
-    border: 1px solid #00ff88;
-    border-top: none;
-    z-index: 9999;
-    border-radius: 0 0 15px 15px;
-}
-
-.sugestao-item {
-    padding: 12px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.sugestao-item:hover { background: #00ff88; color: #07140b; }
-
-/* RESULTADOS */
-#resultadoCultivos { margin-top: 30px; }
-.resultado-card { background: rgba(0,255,136,0.1); padding: 20px; border-radius: 15px; margin-top: 15px; }
-
-#particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+#particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; top: 0; }
