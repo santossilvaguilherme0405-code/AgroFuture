@@ -12,62 +12,56 @@ body {
 /* ====================================== 
    DIAGNÓSTICO E AUTOCOMPLETE 
    ====================================== */
+/* Container do Diagnóstico */
 .diagnostico-box {
     max-width: 1100px;
     margin: auto;
-    padding: 40px;
+    padding: 45px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 30px;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative; 
+    overflow: visible; /* IMPORTANTE: Permite que a lista apareça sobre o box */
 }
 
+/* Container da busca que segura a lista */
 .busca-cidade {
-    position: relative; /* Essencial para as sugestões ficarem presas aqui */
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#cidadeInput {
+    position: relative; 
     width: 100%;
     max-width: 600px;
-    padding: 18px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(0, 255, 136, 0.3);
-    color: white;
-    font-size: 18px;
+    margin: 0 auto 30px auto;
 }
 
-/* LISTA DE SUGESTÕES (SISTEMA DE SCROLL INTERNO) */
+/* A Lista de Cidades (O que você pediu) */
 #sugestoesCidade {
     position: absolute;
-    top: 100%;
+    top: 100%; /* Gruda no fundo do input */
+    left: 0;
     width: 100%;
-    max-width: 600px;
-    max-height: 250px; /* Não deixa ocupar a tela toda */
-    overflow-y: auto;  /* Adiciona o scroll próprio */
-    background: #0a1f12; 
+    max-height: 200px; /* Limita a altura para ter scroll */
+    overflow-y: auto;  /* Faz o scroll aparecer só aqui dentro */
+    background: #0f2316; /* Cor sólida para não confundir com o fundo */
     border: 1px solid #00ff88;
+    border-top: none;
     border-radius: 0 0 15px 15px;
-    z-index: 2000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    z-index: 9999; /* Fica na frente de tudo */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* Item da sugestão */
 .sugestao-item {
-    padding: 15px 20px;
+    padding: 12px 20px;
+    text-align: left;
     cursor: pointer;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
+    color: white;
 }
 
 .sugestao-item:hover {
-    background: rgba(0, 255, 136, 0.2);
-    padding-left: 30px;
+    background: #00ff88;
+    color: #07140b;
 }
-
 /* ====================================== 
    RESULTADOS (ESTILO PREMIUM)
    ====================================== */
