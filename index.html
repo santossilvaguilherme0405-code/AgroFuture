@@ -3,12 +3,19 @@
         <h2 class="title">Diagnóstico Agrícola Inteligente</h2>
         <p class="diagnostico-texto">Descubra os melhores cultivos para sua região e clima.</p>
 
-        <div class="diagnostico-box">
-            <div class="busca-cidade">
-                <label>Digite sua cidade do Paraná</label>
-                <input type="text" id="cidadeInput" placeholder="Ex: Guarapuava..." autocomplete="off">
-                <div id="sugestoesCidade"></div>
-            </div>
+      <div class="diagnostico-box">
+    <div class="busca-cidade">
+        <label>Digite sua cidade do Paraná</label>
+        <input type="text" id="cidadeInput" placeholder="Ex: Londrina..." autocomplete="off">
+        
+        <div id="sugestoesCidade"></div> 
+    </div>
+
+    <div class="filtros-agro">
+        </div>
+    
+    <button class="btn-agro" onclick="analisarCidade()">Analisar</button>
+</div>
 
             <div class="filtros-agro">
                 <div class="filtro-box">
