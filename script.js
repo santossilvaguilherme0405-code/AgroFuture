@@ -153,62 +153,64 @@ function analisarCidade() {
     const resultado = document.getElementById('resultadoCultivos');
 
     const cidades = {
-        // Campos Gerais / Centro-Sul
-        "guarapuava": { culturas: "Erva-mate, soja, milho, batata e morango.", clima: "Frio (Cfb) com geadas frequentes.", venda: "Cooperativas e agroindústrias locais." },
-        "ponta grossa": { culturas: "Soja, milho, trigo e feijão.", clima: "Subtropical temperado.", venda: "Grandes centros de escoamento e ferrovia." },
-        "castro": { culturas: "Leite (referência nacional), milho e batata.", clima: "Frio e úmido.", venda: "Cooperativas leiteiras." },
-        "prudentopolis": { culturas: "Feijão, fumo e erva-mate.", clima: "Subtropical úmido.", venda: "Mercado regional." },
+        // --- CAMPOS GERAIS E CENTRO ---
+        "guarapuava": { culturas: "Batata, cevada, trigo, soja e milho.", clima: "Frio (Cfb), geadas frequentes.", venda: "Cooperativas e malterias." },
+        "ponta grossa": { culturas: "Soja, milho e feijão.", clima: "Subtropical úmido.", venda: "Polo logístico ferroviário." },
+        "castro": { culturas: "Leite, milho e batata.", clima: "Frio e úmido.", venda: "Cooperativas leiteiras (Castrolanda)." },
+        "prudentopolis": { culturas: "Feijão, fumo e erva-mate.", clima: "Subtropical.", venda: "Mercado interno e indústrias de fumo." },
+        "irati": { culturas: "Erva-mate, fumo e grãos.", clima: "Temperado.", venda: "Agroindústrias de madeira e erva." },
+        "reserva": { culturas: "Tomate e grãos.", clima: "Subtropical.", venda: "CEASA e mercados regionais." },
 
-        // Norte
-        "londrina": { culturas: "Café (histórico), soja, milho e frutas.", clima: "Subtropical quente (Cfa).", venda: "Mercados regionais e exportação." },
-        "maringa": { culturas: "Soja, milho, cana-de-açúcar e seda.", clima: "Quente e produtivo.", venda: "Cooperativas de grande porte." },
+        // --- NORTE E NORTE PIONEIRO ---
+        "londrina": { culturas: "Café, soja, milho e trigo.", clima: "Subtropical quente.", venda: "Exportação e cooperativas (Cocamar)." },
+        "maringa": { culturas: "Soja, milho, seda e cana-de-açúcar.", clima: "Quente.", venda: "Grandes cooperativas e indústrias." },
+        "apucarana": { culturas: "Café e grãos.", clima: "Subtropical.", venda: "Indústrias de processamento." },
+        "arapongas": { culturas: "Milho e soja.", clima: "Quente.", venda: "Setor moveleiro e grãos." },
+        "cornelio procopio": { culturas: "Trigo e milho.", clima: "Quente e seco.", venda: "Mercado regional." },
+        "jacarezinho": { culturas: "Cana-de-açúcar e café.", clima: "Tropical.", venda: "Usinas de açúcar e álcool." },
 
-        // Oeste / Sudoeste
-        "cascavel": { culturas: "Soja, milho e avicultura (frango).", clima: "Subtropical com verões quentes.", venda: "Polo agroindustrial do Oeste." },
-        "toledo": { culturas: "Suinocultura, tilápia, soja e milho.", clima: "Quente e úmido.", venda: "Frigoríficos e cooperativas." },
-        "foz do iguacu": { culturas: "Soja, milho e hortaliças.", clima: "Quente (verões intensos).", venda: "Mercado local e exportação." },
-        "pato branco": { culturas: "Soja, milho e feijão.", clima: "Cfb (frio no inverno).", venda: "Cooperativas do Sudoeste." },
-        "francisco beltrao": { culturas: "Leite, aves e grãos.", clima: "Subtropical úmido.", venda: "Agroindústrias locais." },
+        // --- OESTE E SUDOESTE ---
+        "cascavel": { culturas: "Soja, milho, aves e carne bovina.", clima: "Subtropical.", venda: "Polo agroindustrial (Coopavel)." },
+        "toledo": { culturas: "Suínos, tilápia e milho.", clima: "Quente e úmido.", venda: "Frigoríficos de grande porte." },
+        "foz do iguacu": { culturas: "Soja e hortaliças.", clima: "Quente.", venda: "Mercado local e exportação." },
+        "pato branco": { culturas: "Soja e aves.", clima: "Frio no inverno.", venda: "Agroindústrias do Sudoeste." },
+        "francisco beltrao": { culturas: "Leite e aves.", clima: "Úmido.", venda: "Cooperativas de laticínios." },
+        "marechal candido rondon": { culturas: "Suínos, leite e milho.", clima: "Quente.", venda: "Cooperativas locais." },
+        "medianeira": { culturas: "Aves, suínos e soja.", clima: "Subtropical quente.", venda: "Frigoríficos (Lar)." },
+        "palotina": { culturas: "Soja, milho e peixes.", clima: "Quente.", venda: "Polo de tecnologia agrícola (C.Vale)." },
 
-        // Leste / Litoral
-        "curitiba": { culturas: "Hortaliças, flores e pequenos frutos.", clima: "Frio e úmido.", venda: "CEASA e mercados municipais." },
-        "paranagua": { culturas: "Palmito real e agricultura de subsistência.", clima: "Tropical (quente e úmido).", venda: "Porto e mercado local." }
+        // --- NOROESTE (Arenito Caiuá) ---
+        "umuarama": { culturas: "Pecuária de corte e mandioca.", clima: "Tropical quente.", venda: "Frigoríficos e indústrias de fécula." },
+        "paranavai": { culturas: "Laranja e mandioca.", clima: "Arenoso e quente.", venda: "Indústrias de suco e farinheiras." },
+        "cianorte": { culturas: "Cana-de-açúcar e vestuário.", clima: "Quente.", venda: "Usinas e comércio." },
+
+        // --- SUL E LESTE ---
+        "curitiba": { culturas: "Hortaliças e flores.", clima: "Frio e úmido.", venda: "CEASA e mercados gourmet." },
+        "sao jose dos pinhais": { culturas: "Olericultura (verduras) e morango.", clima: "Frio.", venda: "Cinturão verde da capital." },
+        "lapa": { culturas: "Frutas de caroço (pêssego) e grãos.", clima: "Temperado.", venda: "Mercados regionais." },
+        "uniao da vitoria": { culturas: "Erva-mate e madeira.", clima: "Frio.", venda: "Indústrias madeireiras." },
+        "paranagua": { culturas: "Palmito e pesca.", clima: "Litorâneo.", venda: "Porto de exportação." },
+
+        // --- VALE DO IVAÍ E NORTE CENTRAL ---
+        "ivaipora": { culturas: "Grãos e horticultura.", clima: "Subtropical.", venda: "Mercados regionais." },
+        "campo mourao": { culturas: "Soja e milho.", clima: "Quente e produtivo.", venda: "Cooperativa Coamo (Maior da AL)." }
     };
 
     if (cidades[cidade]) {
         resultado.innerHTML = `
             <div class="resultado-hero">
-                <div class="hero-icone">🌱</div>
-                <h2>Cultivos para <span>${cidade.toUpperCase()}</span></h2>
-                <p>Análise baseada no zoneamento agrícola do Paraná.</p>
-            </div>
-            <div class="resultado-grid">
-                <div class="resultado-card">
-                    <h3>🌾 Cultivos Recomendados</h3>
-                    <p>${cidades[cidade].culturas}</p>
-                </div>
-                <div class="resultado-card">
-                    <h3>🌦️ Clima da Região</h3>
-                    <p>${cidades[cidade].clima}</p>
-                </div>
-                <div class="resultado-card">
-                    <h3>🛒 Escoamento/Venda</h3>
-                    <p>${cidades[cidade].venda}</p>
+                <h2>CULTIVOS EM: <span>${cidade.toUpperCase()}</span></h2>
+                <div class="resultado-grid">
+                    <div class="resultado-card"><h3>🌾 Recomendado</h3><p>${cidades[cidade].culturas}</p></div>
+                    <div class="resultado-card"><h3>🌦️ Clima Local</h3><p>${cidades[cidade].clima}</p></div>
+                    <div class="resultado-card"><h3>🛒 Escoamento</h3><p>${cidades[cidade].venda}</p></div>
                 </div>
             </div>`;
     } else {
-        resultado.innerHTML = `
-            <div class="cultivo-card" style="border: 2px solid #ff4444;">
-                <h3>❌ Cidade não mapeada</h3>
-                <p>Tente: Guarapuava, Cascavel, Londrina, Toledo ou Ponta Grossa.</p>
-            </div>`;
+        resultado.innerHTML = `<div class="cultivo-card" style="border: 2px solid #ff4444;"><h3>Cidade não encontrada</h3><p>Tente: Guarapuava, Toledo, Londrina, Paranavai ou Cascavel.</p></div>`;
     }
-    
-    setTimeout(() => {
-        resultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 200);
+    resultado.scrollIntoView({ behavior: 'smooth' });
 }
-
 // ==========================================
 // ANIMAÇÕES AO ROLAR
 // ==========================================
@@ -223,10 +225,13 @@ document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
 // AUTOCOMPLETE
 // ==========================================
 const cidadesPR = [
-    'Guarapuava', 'Curitiba', 'Londrina', 'Maringá', 'Cascavel', 
-    'Ponta Grossa', 'Foz do Iguaçu', 'Toledo', 'Paranavaí', 
-    'Campo Mourão', 'Irati', 'Castro', 'Prudentópolis', 
-    'Pato Branco', 'Francisco Beltrão', 'Paranaguá', 'Umuarama'
+    'Guarapuava', 'Ponta Grossa', 'Castro', 'Prudentópolis', 'Irati', 'Reserva',
+    'Londrina', 'Maringá', 'Apucarana', 'Arapongas', 'Cornélio Procópio', 'Jacarezinho',
+    'Cascavel', 'Toledo', 'Foz do Iguaçu', 'Pato Branco', 'Francisco Beltrão', 
+    'Marechal Cândido Rondon', 'Medianeira', 'Palotina',
+    'Umuarama', 'Paranavaí', 'Cianorte',
+    'Curitiba', 'São José dos Pinhais', 'Lapa', 'União da Vitória', 'Paranaguá',
+    'Ivaiporã', 'Campo Mourão'
 ];
 
 const inputCidade = document.getElementById('cidadeInput');
