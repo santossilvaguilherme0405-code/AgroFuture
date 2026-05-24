@@ -1,0 +1,109 @@
+/* RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #07140b;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* INTRO SCREEN */
+#intro-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background: #07140b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: 1s;
+}
+
+#intro-screen h1 { font-size: 3.5rem; color: #00ff88; margin-bottom: 10px; }
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0; z-index: 900;
+}
+
+/* BOTÕES */
+.btn-agro {
+    background: #00ff88;
+    color: #07140b;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-agro:hover { transform: scale(1.05); background: white; }
+
+/* DIAGNÓSTICO BOX */
+.container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+.diagnostico-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    position: relative;
+    overflow: visible; /* Permite ver a lista de cidades */
+}
+
+/* AUTOCOMPLETE (O QUE VOCÊ PEDIU) */
+.busca-cidade {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #00ff88;
+    color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+#sugestoesCidade {
+    position: absolute;
+    top: 100%; left: 0; width: 100%;
+    max-height: 200px; /* Altura máxima com scroll */
+    overflow-y: auto;
+    background: #0a1f12;
+    border: 1px solid #00ff88;
+    border-top: none;
+    z-index: 9999;
+    border-radius: 0 0 15px 15px;
+}
+
+.sugestao-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sugestao-item:hover { background: #00ff88; color: #07140b; }
+
+/* RESULTADOS */
+#resultadoCultivos { margin-top: 30px; }
+.resultado-card { background: rgba(0,255,136,0.1); padding: 20px; border-radius: 15px; margin-top: 15px; }
+
+#particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
