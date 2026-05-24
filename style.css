@@ -1,212 +1,454 @@
-/* ========================= */
-/* style.css */
-/* ========================= */
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0f172a;
+font-family:'Poppins',sans-serif;
+background:#07140b;
 color:white;
 overflow:hidden;
 }
 
+/* PARTÍCULAS */
+
 #particles-js{
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
 z-index:-1;
 }
 
-#intro-screen{
+/* HEADER */
+
+header{
 position:fixed;
+top:0;
 width:100%;
-height:100vh;
-background:#020617;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:20px;
-transition:1s;
-z-index:999;
+z-index:1000;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 }
 
-#intro-screen h1{
-font-size:60px;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 5%;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
 color:#00ff88;
 }
 
-#intro-screen button{
-padding:15px 40px;
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav ul a{
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+nav ul a:hover{
+color:#00ff88;
+}
+
+.buttons-nav{
+display:flex;
+gap:10px;
+}
+
+.buttons-nav button{
+padding:10px 15px;
 border:none;
 border-radius:12px;
-background:#00ff88;
-color:#000;
-font-size:18px;
 cursor:pointer;
+background:#00c853;
+color:white;
 font-weight:bold;
 }
+
+/* INTRO */
+
+#intro-screen{
+position:fixed;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+z-index:99999;
+transition:1s;
+}
+
+.intro-content h1{
+font-size:90px;
+color:#00ff88;
+margin-bottom:20px;
+}
+
+.intro-content p{
+font-size:25px;
+margin-bottom:30px;
+}
+
+.intro-content button{
+padding:18px 35px;
+border:none;
+border-radius:20px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+background:linear-gradient(45deg,#00ff88,#00c853);
+}
+
+/* SITE */
 
 #site-content{
 opacity:0;
 transition:1s;
-padding:30px;
 }
 
-header{
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 text-align:center;
-margin-bottom:40px;
+padding:120px 20px;
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
 }
 
-header h1{
-font-size:50px;
-color:#00ff88;
-}
-
-.weather-box{
-max-width:700px;
-margin:auto;
-background:#111827;
-padding:30px;
-border-radius:20px;
-margin-bottom:40px;
-border:1px solid #1f2937;
-box-shadow:0 0 20px rgba(0,255,136,0.2);
-}
-
-.weather-box h3{
-margin-bottom:15px;
-color:#00ff88;
-}
-
-.weather-box p{
-margin:10px 0;
-}
-
-.diagnostico{
-max-width:1100px;
-margin:auto;
-text-align:center;
-}
-
-.diagnostico h2{
-font-size:40px;
-margin-bottom:25px;
-color:#00ff88;
-}
-
-.diagnostico input{
-width:300px;
-padding:15px;
-border:none;
-border-radius:12px;
-font-size:16px;
+.hero-content h1{
+font-size:80px;
 margin-bottom:20px;
 }
 
-.diagnostico button{
-padding:15px 30px;
-border:none;
-border-radius:12px;
-background:#00ff88;
+.hero-content p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 35px;
+border-radius:50px;
+background:linear-gradient(45deg,#00ff88,#00c853);
+color:black;
+text-decoration:none;
 font-weight:bold;
-cursor:pointer;
-margin-left:10px;
 }
 
-#resultadoCultivos{
-margin-top:40px;
+/* SEÇÕES */
+
+.section,
+.map-section,
+.diagnostico-section{
+padding:100px 5%;
 }
 
-.resultado-hero{
+.title{
 text-align:center;
-margin-bottom:40px;
+font-size:50px;
+margin-bottom:30px;
 }
 
-.hero-icone{
-font-size:60px;
-margin-bottom:15px;
+/* DIAGNÓSTICO */
+
+.diagnostico-texto{
+text-align:center;
+font-size:20px;
+margin-bottom:50px;
+opacity:0.9;
 }
 
-.resultado-hero h2{
-font-size:38px;
-margin-bottom:15px;
+.diagnostico-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-bottom:30px;
 }
 
-.resultado-hero span{
+.campo{
+display:flex;
+flex-direction:column;
+text-align:left;
+}
+
+.campo label{
+margin-bottom:10px;
+font-weight:600;
+color:#7CFF88;
+}
+
+.campo input,
+.campo select{
+padding:18px;
+border:none;
+border-radius:18px;
+background:rgba(255,255,255,0.08);
+color:white;
+font-size:16px;
+outline:none;
+}
+
+.campo select option{
+background:#07140b;
+}
+
+.campo input:focus,
+.campo select:focus{
+box-shadow:0 0 20px rgba(0,255,136,0.4);
+}
+
+/* AUTOCOMPLETE */
+
+.autocomplete-box{
+position:relative;
+}
+
+#sugestoes{
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#102218;
+border-radius:15px;
+margin-top:8px;
+overflow:hidden;
+display:none;
+z-index:999;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.sugestao-item{
+padding:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.sugestao-item:hover{
+background:rgba(0,255,136,0.15);
 color:#00ff88;
+padding-left:25px;
 }
 
-.resultado-hero p{
-color:#cbd5e1;
-font-size:18px;
-}
+/* BOTÃO */
 
-.resultado-grid{
+.btn-area{
 display:flex;
 justify-content:center;
+margin-bottom:50px;
+}
+
+.btn-diagnostico{
+padding:18px 40px;
+border:none;
+border-radius:20px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+background:linear-gradient(45deg,#00ff88,#00c853);
+transition:0.3s;
+}
+
+.btn-diagnostico:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(0,255,136,0.4);
+}
+
+/* RESULTADOS */
+
+.resultado-cultivos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
-flex-wrap:wrap;
-}
-
-.resultado-card{
-background:#111827;
-padding:30px;
-width:300px;
-border-radius:25px;
-border:1px solid #1f2937;
-transition:0.4s;
-box-shadow:0 0 20px rgba(0,255,136,0.1);
-}
-
-.resultado-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,136,0.4);
-}
-
-.icone-card{
-font-size:45px;
-margin-bottom:15px;
-}
-
-.resultado-card h3{
-margin-bottom:15px;
-color:#00ff88;
-}
-
-.resultado-card p{
-color:#cbd5e1;
-line-height:1.6;
 }
 
 .cultivo-card{
-background:#111827;
+background:rgba(255,255,255,0.06);
 padding:30px;
-border-radius:20px;
-max-width:500px;
-margin:auto;
+border-radius:25px;
+backdrop-filter:blur(10px);
+transition:0.4s;
 }
 
-@media(max-width:768px){
+.cultivo-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,255,136,0.25);
+}
 
-.resultado-grid{
-flex-direction:column;
+.cultivo-card h3{
+font-size:28px;
+margin-bottom:18px;
+color:#00ff88;
+}
+
+.cultivo-card p{
+line-height:1.8;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border-radius:25px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,255,136,0.3);
+}
+
+.card img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.card h3{
+padding:20px;
+}
+
+.card p{
+padding:0 20px 30px;
+}
+
+/* MAPA */
+
+.climate-map{
+position:relative;
+border-radius:30px;
+overflow:hidden;
+}
+
+.climate-map img{
+width:100%;
+height:600px;
+object-fit:cover;
+filter:brightness(0.6);
+}
+
+.map-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
 align-items:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-.diagnostico input{
-width:100%;
+.climate-card{
+background:rgba(0,0,0,0.5);
+padding:30px;
+border-radius:25px;
+text-align:center;
+min-width:220px;
+backdrop-filter:blur(10px);
 }
 
-.diagnostico button{
-margin-top:10px;
-margin-left:0;
-width:100%;
+.climate-card b{
+font-size:35px;
+color:#00ff88;
+}
+
+/* FOOTER */
+
+footer{
+padding:50px;
+text-align:center;
+background:rgba(0,0,0,0.4);
+margin-top:50px;
+}
+
+/* LIGHT MODE */
+
+.light-mode{
+background:#edf8ef;
+color:#111;
+}
+
+.light-mode .cultivo-card,
+.light-mode .card,
+.light-mode .climate-card{
+color:white;
+}
+
+/* ANIMAÇÃO */
+
+.hidden{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+nav{
+flex-direction:column;
+gap:20px;
+}
+
+.hero-content h1{
+font-size:50px;
+}
+
+.title{
+font-size:35px;
+}
+
+.intro-content h1{
+font-size:55px;
+}
+
+.climate-map img{
+height:700px;
 }
 
 }
