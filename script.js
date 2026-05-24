@@ -1,36 +1,20 @@
-// =========================
-// script.js
-// =========================
-
 // VLibras
-new window.VLibras.Widget(
-'https://vlibras.gov.br/app'
-);
+new window.VLibras.Widget('https://vlibras.gov.br/app');
 
 // PARTICLES
 particlesJS('particles-js', {
 
 particles: {
 
-number:{
-value:80
-},
+number:{ value:80 },
 
-color:{
-value:'#00ff88'
-},
+color:{ value:'#00ff88' },
 
-shape:{
-type:'circle'
-},
+shape:{ type:'circle' },
 
-opacity:{
-value:0.5
-},
+opacity:{ value:0.5 },
 
-size:{
-value:3
-},
+size:{ value:3 },
 
 line_linked:{
 enable:true,
@@ -49,7 +33,39 @@ speed:2
 
 });
 
-// ENTRAR NO SITE
+// TEMA
+
+const themeBtn =
+document.getElementById('themeBtn');
+
+themeBtn.addEventListener('click',()=>{
+
+document.body.classList.toggle('light-mode');
+
+});
+
+// ZOOM
+
+let zoomLevel = 100;
+
+document.getElementById('zoomIn')
+.addEventListener('click',()=>{
+
+zoomLevel += 10;
+document.body.style.zoom = zoomLevel + '%';
+
+});
+
+document.getElementById('zoomOut')
+.addEventListener('click',()=>{
+
+zoomLevel -= 10;
+document.body.style.zoom = zoomLevel + '%';
+
+});
+
+// ENTRAR SITE
+
 function entrarSite(){
 
 const intro =
@@ -58,218 +74,318 @@ document.getElementById('intro-screen');
 const site =
 document.getElementById('site-content');
 
-intro.style.opacity='0';
+intro.style.opacity = '0';
 
 setTimeout(()=>{
 
-intro.style.display='none';
+intro.style.display = 'none';
 
-site.style.opacity='1';
+site.style.opacity = '1';
 
-document.body.style.overflow='auto';
+document.body.style.overflow = 'auto';
 
 },1000);
 
 }
 
-// CLIMA
-navigator.geolocation.getCurrentPosition(
+// ANIMAÇÕES
 
-async(position)=>{
+const observer =
+new IntersectionObserver((entries)=>{
 
-const lat = position.coords.latitude;
+entries.forEach((entry)=>{
 
-const lon = position.coords.longitude;
+if(entry.isIntersecting){
 
-const apiKey =
-'3924a0c6fd1f4f713a1f3b29f8f32da8';
+entry.target.classList.add('show');
 
-try{
+}
 
-const response = await fetch(
+});
 
-`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt_br`
+});
+
+document.querySelectorAll('.hidden')
+.forEach((el)=>observer.observe(el));
+
+// AUTOCOMPLETE
+
+const cidadesPR = [
+
+'Guarapuava',
+'Curitiba',
+'Cascavel',
+'Londrina',
+'Maringá',
+'Ponta Grossa',
+'Foz do Iguaçu',
+'Toledo',
+'Pato Branco',
+'Francisco Beltrão',
+'Campo Mourão',
+'Paranavaí',
+'Umuarama',
+'Apucarana',
+'Arapongas',
+'Irati',
+'União da Vitória',
+'Telêmaco Borba',
+'Palmas',
+'Guaratuba',
+'Paranaguá',
+'Matinhos',
+'Castro',
+'Lapa',
+'Cianorte',
+'Cornélio Procópio',
+'Jacarezinho',
+'Santo Antônio da Platina',
+'Dois Vizinhos',
+'Medianeira',
+'Assis Chateaubriand',
+'Goioerê',
+'Ivaiporã',
+'Pitanga',
+'Prudentópolis',
+'Quedas do Iguaçu',
+'Rio Negro',
+'São Mateus do Sul',
+'Wenceslau Braz',
+'Palotina'
+
+];
+
+const cidadeInput =
+document.getElementById('cidadeInput');
+
+const sugestoes =
+document.getElementById('sugestoes');
+
+cidadeInput.addEventListener('input',()=>{
+
+const valor =
+cidadeInput.value.toLowerCase();
+
+sugestoes.innerHTML = '';
+
+if(valor.length < 1){
+
+sugestoes.style.display = 'none';
+return;
+
+}
+
+const filtradas =
+cidadesPR.filter(cidade=>
+
+cidade.toLowerCase()
+.includes(valor)
 
 );
 
-const data = await response.json();
+if(filtradas.length === 0){
 
-const temp =
-Math.round(data.main.temp);
-
-document.querySelector('.weather-box')
-.innerHTML = `
-
-<h3>
-🌦️ ${data.name}
-</h3>
-
-<p>
-🌡️ Temperatura: ${temp}°C
-</p>
-
-<p>
-💧 Umidade: ${data.main.humidity}%
-</p>
-
-<p>
-🌬️ Vento: ${data.wind.speed} km/h
-</p>
-
-`;
-
-}catch(error){
-
-mostrarClimaPadrao();
+sugestoes.style.display = 'none';
+return;
 
 }
 
-},
+sugestoes.style.display = 'block';
 
-(error)=>{
+filtradas.forEach(cidade=>{
 
-mostrarClimaPadrao();
+const item =
+document.createElement('div');
 
-}
+item.classList.add('sugestao-item');
 
-);
+item.innerText = cidade;
 
-// CLIMA PADRÃO
-function mostrarClimaPadrao(){
+item.onclick = ()=>{
 
-document.querySelector('.weather-box')
-.innerHTML = `
+cidadeInput.value = cidade;
+sugestoes.style.display = 'none';
 
-<h3>
-🌦️ Guarapuava
-</h3>
+};
 
-<p>
-🌡️ Temperatura: 18°C
-</p>
+sugestoes.appendChild(item);
 
-<p>
-💧 Umidade: 82%
-</p>
+});
 
-<p>
-🌬️ Vento: 9 km/h
-</p>
+});
 
-`;
+// FECHAR AUTOCOMPLETE
+
+document.addEventListener('click',(e)=>{
+
+if(!e.target.closest('.autocomplete-box')){
+
+sugestoes.style.display = 'none';
 
 }
 
-// DIAGNÓSTICO IA
-function analisarCidade(){
+});
+
+// DIAGNÓSTICO
+
+function buscarCultivos(){
 
 const cidade =
-document.getElementById('cidadeInput')
-.value
-.toLowerCase()
-.trim();
+cidadeInput.value.toLowerCase();
+
+const porte =
+document.getElementById('porteSelect').value;
+
+const area =
+document.getElementById('areaInput').value;
 
 const resultado =
 document.getElementById('resultadoCultivos');
 
-const cidades = {
-
-"guarapuava":{
-culturas:"Erva-mate, soja, milho, trigo, batata e morango.",
-clima:"Clima frio com geadas frequentes.",
-venda:"Feiras rurais, cooperativas e mercados locais."
-},
-
-"curitiba":{
-culturas:"Hortaliças, flores, morango e alface.",
-clima:"Clima úmido e frio.",
-venda:"Feiras urbanas e mercados municipais."
-},
-
-"londrina":{
-culturas:"Café, soja, milho e frutas.",
-clima:"Clima subtropical quente.",
-venda:"Mercados regionais e cooperativas."
-}
-
-};
-
-if(cidades[cidade]){
+if(cidade === '' || porte === '' || area === ''){
 
 resultado.innerHTML = `
 
-<div class="resultado-hero">
+<div class="cultivo-card">
 
-<div class="hero-icone">
-🌱
-</div>
-
-<h2>
-Cultivos indicados para
-<span>
-${cidade.charAt(0).toUpperCase() + cidade.slice(1)}
-</span>
-</h2>
+<h3>⚠️ Preencha todos os campos</h3>
 
 <p>
-Análise agrícola inteligente baseada no clima.
+Digite cidade, porte e área.
 </p>
-
-</div>
-
-<div class="resultado-grid">
-
-<div class="resultado-card">
-
-<div class="icone-card">
-🌾
-</div>
-
-<h3>
-Cultivos
-</h3>
-
-<p>
-${cidades[cidade].culturas}
-</p>
-
-</div>
-
-<div class="resultado-card">
-
-<div class="icone-card">
-🌦️
-</div>
-
-<h3>
-Clima
-</h3>
-
-<p>
-${cidades[cidade].clima}
-</p>
-
-</div>
-
-<div class="resultado-card">
-
-<div class="icone-card">
-🛒
-</div>
-
-<h3>
-Mercado
-</h3>
-
-<p>
-${cidades[cidade].venda}
-</p>
-
-</div>
 
 </div>
 
 `;
+
+return;
+
+}
+
+// GUARAPUAVA
+
+if(cidade.includes('guarapuava')){
+
+resultado.innerHTML = `
+
+<div class="cultivo-card">
+
+<h3>🍓 Morango</h3>
+
+<p>
+Excelente para clima frio.
+Alta lucratividade.
+</p>
+
+</div>
+
+<div class="cultivo-card">
+
+<h3>🌱 Erva-mate</h3>
+
+<p>
+Produção valorizada.
+Ideal para clima úmido.
+</p>
+
+</div>
+
+<div class="cultivo-card">
+
+<h3>🥬 Hortaliças</h3>
+
+<p>
+Ótimo para pequenas áreas.
+Venda rápida.
+</p>
+
+</div>
+
+`;
+
+}
+
+// CASCAVEL
+
+else if(cidade.includes('cascavel')){
+
+resultado.innerHTML = `
+
+<div class="cultivo-card">
+
+<h3>🌽 Milho</h3>
+
+<p>
+Alta produtividade agrícola.
+</p>
+
+</div>
+
+<div class="cultivo-card">
+
+<h3>🌾 Soja</h3>
+
+<p>
+Grande demanda no mercado.
+</p>
+
+</div>
+
+`;
+
+}
+
+// CURITIBA
+
+else if(cidade.includes('curitiba')){
+
+resultado.innerHTML = `
+
+<div class="cultivo-card">
+
+<h3>🥦 Brócolis</h3>
+
+<p>
+Clima ideal para hortaliças.
+</p>
+
+</div>
+
+<div class="cultivo-card">
+
+<h3>🍇 Uva</h3>
+
+<p>
+Boa adaptação regional.
+</p>
+
+</div>
+
+`;
+
+}
+
+// NÃO ENCONTRADA
+
+else{
+
+resultado.innerHTML = `
+
+<div class="cultivo-card">
+
+<h3>🌎 Região ainda não cadastrada</h3>
+
+<p>
+Estamos adicionando novas cidades.
+</p>
+
+</div>
+
+`;
+
+}
+
+// ROLAR AUTOMÁTICO
 
 setTimeout(()=>{
 
@@ -280,28 +396,6 @@ block:'start'
 
 });
 
-},200);
-
-}
-
-else{
-
-resultado.innerHTML = `
-
-<div class="cultivo-card">
-
-<h3>
-❌ Cidade não encontrada
-</h3>
-
-<p>
-Digite uma cidade cadastrada.
-</p>
-
-</div>
-
-`;
-
-}
+},300);
 
 }
