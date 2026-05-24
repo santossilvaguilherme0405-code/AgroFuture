@@ -12,50 +12,51 @@ body {
 /* ====================================== 
    DIAGNÓSTICO E AUTOCOMPLETE 
    ====================================== */
-/* Container do Diagnóstico */
-.diagnostico-box {
-    max-width: 1100px;
-    margin: auto;
-    padding: 45px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative; 
-    overflow: visible; /* IMPORTANTE: Permite que a lista apareça sobre o box */
-}
-
-/* Container da busca que segura a lista */
+/* Container que segura o Input e as Sugestões */
 .busca-cidade {
-    position: relative; 
+    position: relative; /* "Imã" para a lista não fugir */
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto 30px auto;
 }
 
-/* A Lista de Cidades (O que você pediu) */
+/* O Campo de Texto (Input) */
+#cidadeInput {
+    width: 100%;
+    padding: 18px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #00ff88;
+    color: white;
+    font-size: 18px;
+    outline: none;
+}
+
+/* A LISTA DE SUGESTÕES (O que você queria corrigir) */
 #sugestoesCidade {
     position: absolute;
-    top: 100%; /* Gruda no fundo do input */
+    top: 100%; /* Gruda logo abaixo do input */
     left: 0;
     width: 100%;
-    max-height: 200px; /* Limita a altura para ter scroll */
-    overflow-y: auto;  /* Faz o scroll aparecer só aqui dentro */
-    background: #0f2316; /* Cor sólida para não confundir com o fundo */
+    
+    /* SCROLL INTERNO */
+    max-height: 200px; /* Não deixa a lista crescer mais que isso */
+    overflow-y: auto;  /* Se tiver muita cidade, o scroll aparece só aqui */
+    
+    background: #0a1f12; /* Fundo escuro sólido para leitura */
     border: 1px solid #00ff88;
     border-top: none;
     border-radius: 0 0 15px 15px;
-    z-index: 9999; /* Fica na frente de tudo */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 1000; /* Fica na frente de tudo */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* Item da sugestão */
+/* Itens da lista */
 .sugestao-item {
     padding: 12px 20px;
-    text-align: left;
     cursor: pointer;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    color: white;
+    transition: 0.2s;
 }
 
 .sugestao-item:hover {
