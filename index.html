@@ -6,26 +6,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Agro Forte</title>
+<title>AgroFuture - Futuro Sustentável</title>
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 </head>
 
 <body>
 
-<!-- PARTICLES -->
-<div id="particles-js"></div>
-
-<!-- TELA INICIAL -->
+<!-- INTRO -->
 <div id="intro-screen">
 
-<h1>🌱 Agro Forte</h1>
+<div class="intro-content">
+
+<h1>🌱 AgroFuture</h1>
 
 <p>
-Tecnologia e sustentabilidade para o agro
+Tecnologia, sustentabilidade e inovação para o futuro do campo.
 </p>
 
 <button onclick="entrarSite()">
@@ -34,48 +38,280 @@ Entrar no Site
 
 </div>
 
+</div>
+
 <!-- SITE -->
 <div id="site-content">
 
+<div id="particles-js"></div>
+
+<!-- HEADER -->
 <header>
 
-<h1>🌾 Agro Forte</h1>
+<nav>
 
-<p>
-Monitoramento agrícola inteligente
-</p>
+<div class="logo">🌱 AgroFuture</div>
+
+<ul>
+
+<li><a href="#inicio">Início</a></li>
+<li><a href="#tecnologias">Tecnologias</a></li>
+<li><a href="#diagnostico">Diagnóstico</a></li>
+<li><a href="#mapa">Clima</a></li>
+
+</ul>
+
+<div class="buttons-nav">
+
+<button id="themeBtn">🌙</button>
+
+<button id="zoomIn">A+</button>
+
+<button id="zoomOut">A-</button>
+
+</div>
+
+</nav>
 
 </header>
 
-<!-- CLIMA -->
-<section class="weather-box">
+<!-- HERO -->
+<section class="hero" id="inicio">
 
-<h3>🌦️ Carregando clima...</h3>
+<div class="hero-content">
+
+<h1>
+AGRO FUTURE
+</h1>
+
+<p>
+Tecnologia e sustentabilidade para o futuro agrícola.
+</p>
+
+<a href="#diagnostico" class="btn">
+Explorar
+</a>
+
+</div>
 
 </section>
 
 <!-- DIAGNÓSTICO -->
-<section class="diagnostico">
+<section class="diagnostico-section hidden" id="diagnostico">
 
-<h2>
-🌱 Diagnóstico Agrícola IA
+<div class="diagnostico-container">
+
+<h2 class="title">
+🌾 Diagnóstico Inteligente Agrícola
 </h2>
+
+<p class="diagnostico-texto">
+Descubra os melhores cultivos para sua região.
+</p>
+
+<div class="diagnostico-box">
+
+<!-- CIDADE -->
+<div class="campo autocomplete-box">
+
+<label>📍 Cidade</label>
 
 <input
 type="text"
 id="cidadeInput"
-placeholder="Digite uma cidade"
-/>
+placeholder="Digite sua cidade">
 
-<button onclick="analisarCidade()">
-Analisar
+<div id="sugestoes"></div>
+
+</div>
+
+<!-- PORTE -->
+<div class="campo">
+
+<label>🚜 Porte agrícola</label>
+
+<select id="porteSelect">
+
+<option value="">Selecione</option>
+
+<option value="pequeno">
+🌱 Pequeno produtor
+</option>
+
+<option value="medio">
+🚜 Médio produtor
+</option>
+
+<option value="grande">
+🏭 Grande produtor
+</option>
+
+</select>
+
+</div>
+
+<!-- ÁREA -->
+<div class="campo">
+
+<label>📏 Área (hectares)</label>
+
+<input
+type="number"
+id="areaInput"
+placeholder="Ex: 20">
+
+</div>
+
+</div>
+
+<!-- BOTÃO -->
+<div class="btn-area">
+
+<button class="btn-diagnostico" onclick="buscarCultivos()">
+
+🔍 Analisar Cultivos
+
 </button>
 
-<div id="resultadoCultivos"></div>
+</div>
+
+<!-- RESULTADO -->
+<div id="resultadoCultivos" class="resultado-cultivos">
+
+<div class="cultivo-card">
+
+<h3>🌱 Faça uma pesquisa</h3>
+
+<p>
+Digite os dados acima para receber recomendações agrícolas inteligentes.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
+<!-- TECNOLOGIAS -->
+<section class="section hidden" id="tecnologias">
+
+<h2 class="title">
+Tecnologias Sustentáveis
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop">
+
+<h3>🌾 Irrigação Inteligente</h3>
+
+<p>
+Economize água usando sensores modernos.
+</p>
+
 </div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop">
+
+<h3>🚁 Drones Agrícolas</h3>
+
+<p>
+Monitoramento aéreo de plantações.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop">
+
+<h3>☀️ Energia Solar</h3>
+
+<p>
+Energia limpa e sustentável para fazendas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MAPA -->
+<section class="map-section hidden" id="mapa">
+
+<h2 class="title">
+🌦️ Clima Agrícola
+</h2>
+
+<div class="climate-map">
+
+<img
+src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop">
+
+<div class="map-overlay">
+
+<div class="climate-card">
+
+🌡️ Temperatura
+<br>
+<b id="tempMapa">18°C</b>
+
+</div>
+
+<div class="climate-card">
+
+💧 Umidade
+<br>
+<b id="umidadeMapa">82%</b>
+
+</div>
+
+<div class="climate-card">
+
+🌬️ Ventos
+<br>
+<b id="ventoMapa">9 km/h</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<h2>
+🌱 AgroFuture - Futuro Sustentável
+</h2>
+
+</footer>
+
+</div>
+
+<!-- VLIBRAS -->
+<div vw class="enabled">
+
+<div vw-access-button class="active"></div>
+
+<div vw-plugin-wrapper>
+
+<div class="vw-plugin-top-wrapper"></div>
+
+</div>
+
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
 <script src="script.js"></script>
 
