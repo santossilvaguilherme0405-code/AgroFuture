@@ -222,7 +222,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
 
 // ==========================================
-// AUTOCOMPLETE
+// AUTOCOMPLETE DE CIDADES 
 // ==========================================
 const cidadesPR = [
     'Guarapuava', 'Ponta Grossa', 'Castro', 'Prudentópolis', 'Irati', 'Reserva',
@@ -237,17 +237,37 @@ const cidadesPR = [
 const inputCidade = document.getElementById('cidadeInput');
 const sugestoes = document.getElementById('sugestoesCidade');
 
-if(inputCidade) {
+if (inputCidade && sugestoes) {
     inputCidade.addEventListener('input', () => {
-        const valor = inputCidade.value.toLowerCase();
+        const valor = inputCidade.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""); // Remove acentos da busca
         sugestoes.innerHTML = '';
+
         if (valor.length < 1) return;
-        cidadesPR.filter(c => c.toLowerCase().includes(valor)).forEach(c => {
+
+        // Filtra as cidades comparando sem acentos
+        const filtradas = cidadesPR.filter(cidade => {
+            const cidadeSemAcento = cidade.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+            return cidadeSemAcento.includes(valor);
+        });
+
+        filtradas.forEach(cidade => {
             const item = document.createElement('div');
-            item.className = 'sugestao-item';
-            item.innerText = c;
-            item.onclick = () => { inputCidade.value = c; sugestoes.innerHTML = ''; };
+            item.classList.add('sugestao-item');
+            item.innerText = cidade;
+            
+            item.onclick = () => {
+                inputCidade.value = cidade;
+                sugestoes.innerHTML = '';
+                analisarCidade(); // Já dispara a análise ao clicar na sugestão!
+            };
             sugestoes.appendChild(item);
         });
+    });
+
+    // Fecha as sugestões se clicar fora
+    document.addEventListener('click', (e) => {
+        if (e.target !== inputCidade) {
+            sugestoes.innerHTML = '';
+        }
     });
 }
