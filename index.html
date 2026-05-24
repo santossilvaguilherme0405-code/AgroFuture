@@ -1,68 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroFuture | Diagnóstico Inteligente</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+<section id="diagnostico" class="diagnostico-section hidden">
+    <div class="container">
+        <h2 class="title">Diagnóstico Agrícola Inteligente</h2>
+        <p class="diagnostico-texto">Descubra os melhores cultivos para sua região e clima.</p>
 
-    <div id="intro-screen">
-        <h1>AgroFuture</h1>
-        <p>Inovação e Sustentabilidade no Campo</p>
-        <button class="btn-agro" onclick="entrarSite()">Entrar no Site</button>
-    </div>
-
-    <div id="site-content" style="opacity: 0;">
-        <div id="particles-js"></div>
-
-        <nav class="navbar">
-            <div class="logo">🌿 AgroFuture</div>
-            <div class="nav-links">
-                <a href="#diagnostico">Diagnóstico</a>
-                <a href="#clima">Clima</a>
+        <div class="diagnostico-box">
+            <div class="busca-cidade">
+                <label>Digite sua cidade do Paraná</label>
+                <input type="text" id="cidadeInput" placeholder="Ex: Guarapuava..." autocomplete="off">
+                <div id="sugestoesCidade"></div>
             </div>
-            <button id="themeBtn">🌙</button>
-        </nav>
 
-        <div class="container">
-            <section id="diagnostico" class="section">
-                <h2 class="title">Diagnóstico Agrícola Inteligente</h2>
-                <p class="subtitle">Descubra os melhores tipos de cultivo para sua região.</p>
-
-                <div class="diagnostico-box">
-                    <div class="busca-cidade">
-                        <label>Digite sua cidade do Paraná</label>
-                        <input type="text" id="cidadeInput" placeholder="Ex: Cascavel..." autocomplete="off">
-                        <div id="sugestoesCidade"></div>
-                    </div>
-                    
-                    <div class="filtros-agro">
-                        <div class="filtro-item">
-                            <label>Porte da Produção</label>
-                            <select id="porteProducao">
-                                <option>Pequeno Produtor</option>
-                                <option>Médio Produtor</option>
-                                <option>Grande Produtor</option>
-                            </select>
-                        </div>
-                        <div class="filtro-item">
-                            <label>Área em hectares</label>
-                            <input type="number" id="areaHectares" placeholder="Ex: 15">
-                        </div>
-                    </div>
-                    
-                    <button class="btn-agro" onclick="analisarCidade()">Analisar Região</button>
+            <div class="filtros-agro">
+                <div class="filtro-box">
+                    <label>Porte da Produção</label>
+                    <select id="porteProducao">
+                        <option value="pequeno">Pequeno Produtor</option>
+                        <option value="medio">Médio Produtor</option>
+                        <option value="grande">Grande Produtor</option>
+                    </select>
                 </div>
+                <div class="filtro-box">
+                    <label>Tamanho da Área (Hectares)</label>
+                    <input type="number" id="areaHectares" placeholder="Ex: 15">
+                </div>
+            </div>
 
-                <div id="resultadoCultivos"></div>
-            </section>
+            <button class="btn-agro" onclick="analisarCidade()">Analisar Região</button>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+        <div id="resultadoCultivos" class="resultado-cultivos"></div>
+    </div>
+</section>
