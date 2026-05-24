@@ -1,34 +1,94 @@
-<!DOCTYPE html>
-<section id="diagnostico" class="diagnostico-section hidden">
-    <div class="container">
-        <h2 class="title">Diagnóstico Agrícola Inteligente</h2>
-        <p class="diagnostico-texto">Descubra os melhores cultivos para sua região e clima.</p>
+<! DOCTYPE html >
+< html lang =" pt-br " >
+< cabeça >
+    < meta charset =" UTF-8 " >
+    < meta name =" viewport " content =" width=device-width, initial-scale=1.0 " >
+    < title > AgroFuture |Diagnóstico Inteligente </</ título >
+    < link rel =" folha de estilo " href =" style.css " >
+    < link href =" https://fonts.googleapis.com/css2? family=Poppins:wght@300;400;600&display=swap " rel =" folha de estilo " >
+</ cabeça >
+< corpo >
+< section id =" diagnostico " classe =" diagnóstico-seção oculta " >
+    < divdiv classe =" recipiente " >
+        < classe h2 class=" título " > Diagnóstico Agrícola Inteligente </ h2 >
+        < p class =" diagnóstico-texto " > os cultivos melhores para região e clima.</ p >
 
-        <div class="diagnostico-box">
-            <div class="busca-cidade">
-                <label>Digite sua cidade do Paraná</label>
-                <input type="text" id="cidadeInput" placeholder="Ex: Guarapuava..." autocomplete="off">
-                <div id="sugestoesCidade"></div>
-            </div>
+    < div id =" intro-screen " >
+        < h1 > AgroFuture </ h1 >
+        < p > Inovação e Sustentabilidade no Campo </ p >
+        < classe de botão class=" btn-agro " onclick ="entro()" > Entrar no Site </ botão >
+    </ div >
 
-            <div class="filtros-agro">
-                <div class="filtro-box">
-                    <label>Porte da Produção</label>
-                    <select id="porteProducao">
-                        <option value="pequeno">Pequeno Produtor</option>
-                        <option value="medio">Médio Produtor</option>
-                        <option value="grande">Grande Produtor</option>
-                    </select>
-                </div>
-                <div class="filtro-box">
-                    <label>Tamanho da Área (Hectares)</label>
-                    <input type="number" id="areaHectares" placeholder="Ex: 15">
-                </div>
-            </div>
+    < div id =" site-content " style =" opacidade: 0; " >
+        < div id =" partículas-js " > </ div >
 
-            <button class="btn-agro" onclick="analisarCidade()">Analisar Região</button>
-        </div>
+        < nav class =" navbar " >
+            < divdiv class =" logotipo " > 🌿 AgroFuture </ div >
+            < div class =" nav-links " >
+                < a href =" #diagnostico " > Diagnóstico </ a >
+                < a href =" #clima " > Clima </ a >
+        < div class =" caixa de diagnóstico " >
+            < div class =" busca-cidade " >
+                < label > Digite sua cidade do Paraná </ etiqueta >
+                < tipo de entrada =" texto " id =" cidadeInput " placeholder =" Ex: Guarapuava..." autocomplete =" off " >
+                < div id =" sugestoesCidade " > </ div >
+            </ div >
+            < botão id =" temaBtn " >🌙  botão >
+        </ nav >
 
-        <div id="resultadoCultivos" class="resultado-cultivos"></div>
-    </div>
-</section>
+        < divdiv classe =" recipiente " >
+            < section id =" diagnostico " classe =" seção " >
+                < classe h2 class=" título " > Diagnóstico Agrícola Inteligente </ h2 >
+                < p classe =" legenda "Descobrir > os tipos de melhores de cultivo para sua sua.p>
+
+                < div class =" caixa de diagnóstico " >
+                    < div class =" busca-cidade " >
+                        < label > Digite sua cidade do Paraná </ etiqueta >
+                        < tipo de entrada =" texto " id =" cidadeInput " placeholder =" Ex: Cascavel..." autocomplete =" off " >
+                        < div id =" sugestoesCidade " > </ div >
+                    </ div >
+
+                    < classe div =" filtros-agro " >
+                        < classe div ="-item " >
+                            < label >> Porte da Produção </ etiqueta >
+                            < select id =" porteProducao " >
+                                < opção >> Pequeno Esquema  opção >
+                                < opção >> Produtor Médio </ opção >
+                                < opção >> Grande Produtor </ opção >
+                            </ selecione >
+                        </ div >
+                        < classe div ="-item " >
+                            < rótulo > Área em hectares </ rótulo >
+                            < tipo de entrada =" número " id =" areaHectares " placeholder =" Ex: 15 " >
+                        </ div >
+                    </ div >
+
+                    < botão classe =" btn-agro " onclick ="C analisaridade()" > Analisar Região </ botão >
+            < classe div =" filtros-agro " >
+                < classe div ="-box " >
+                    < label >> Porte da Produção </ etiqueta >
+                    < select id =" porteProducao " >
+                        < valor da opção value=" pequeno " > Pequenor </ opção >
+                        < optionoption value =" medio " > Médior </ opção Produtor>>
+                        < valor da opção value=" grande " > Grande Produtor </ opção >
+                    </ selecione >
+                </ div >
+                < classe div ="-box " >
+                    < label > Tamanho da Área (Hectares)</ etiqueta >
+                    < tipo de entrada =" número " id =" areaHectares " placeholder =" Ex: 15 " >
+                </ div >
+            </ div >
+
+                < div id =" resultadoCultivos " > </ div >
+            </ seção >
+            < botão classe =" btn-agro " onclick ="C analisaridade()" > Analisar Região </ botão >
+        </ div >
+    </ div >
+
+    < script src =" https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js " > </ script >
+    < script src =" script.js " > </ script >
+</ corpo >
+</ html >
+        < div id =" resultadoCultivos " classe =" resultados-cultivos " > </ div >
+    </ div >
+</ seção >
