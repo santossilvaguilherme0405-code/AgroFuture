@@ -1,206 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte - Futuro Sustentável</title>
-
+    <title>AgroFuture - Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="modal" id="helpModal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharAjuda()">&times;</span>
-            <h2>📞 Central de Ajuda Agro</h2>
-            <p>
-                预 Monitore o clima diariamente.<br><br>
-                💧 Utilize irrigação inteligente.<br><br>
-                🌱 Preserve o solo e os recursos naturais.<br><br>
-                🚁 Use tecnologias sustentáveis no campo.<br><br>
-                ☀️ Invista em energia limpa e produção consciente.
-            </p>
-        </div>
-    </div>
-
-    <div id="intro-screen">
-        <div class="intro-content">
-            <h1>🌱 AgroFuture</h1>
-            <p>Tecnologia, sustentabilidade e inovação para o futuro do campo.</p>
-            <button onclick="entrarSite()">Entrar no Site</button>
-        </div>
-    </div>
-
-    <div id="site-content">
-        <div id="particles-js"></div>
-
-        <header>
-            <nav>
-                <div class="logo">🌱 AgroFuture</div>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#tecnologias">Tecnologias</a></li>
-                    <li><a href="#mapa">Clima</a></li>
-                    <li><a href="#diagnostico">Diagnóstico</a></li>
-                </ul>
-                <div class="buttons-nav">
-                    <button id="themeBtn" title="Alternar Tema">🌙</button>
-                    <button id="zoomIn">A+</button>
-                    <button id="zoomOut">A-</button>
-                </div>
-            </nav>
-        </header>
-
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <h1>AGRO FORTE <br> FUTURO SUSTENTÁVEL</h1>
-                <p>Equilíbrio entre produção agrícola, tecnologia e preservação ambiental.</p>
-                <a href="#tecnologias" class="btn">Explorar o Futuro</a>
-            </div>
-        </section>
-
-        <section class="diagnostico-section hidden" id="diagnostico">
-            <h2 class="title">🌾 Diagnóstico Inteligente Agrícola</h2>
-            <p class="diagnostico-texto">Descubra os melhores cultivos para sua região e clima.</p>
-            
-            <div class="diagnostico-box">
-                <div class="busca-cidade">
-                    <label for="cidadeInput">📍 Digite sua cidade</label>
-                    <input type="text" id="cidadeInput" placeholder="Ex: Guarapuava">
-                    
-                    <select id="porteSelect">
-                        <option value="">Selecione o porte agrícola</option>
-                        <option value="pequeno">🌱 Pequeno produtor</option>
-                        <option value="medio">🚜 Médio produtor</option>
-                        <option value="grande">🏭 Grande produtor</option>
-                    </select>
-
-                    <input type="number" id="areaInput" placeholder="Área em hectares">
-                    <button onclick="buscarCultivos()">Buscar Cultivos</button>
-                </div>
-
-                <div id="resultadoCultivos" class="resultado-cultivos">
-                    <div class="cultivo-card">
-                        <h3>🌱 Faça uma pesquisa</h3>
-                        <p>Digite os dados acima para obter o diagnóstico da sua região.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section hidden" id="tecnologias">
-            <h2 class="title">Tecnologias Sustentáveis</h2>
-            <div class="cards">
-                <div class="card" onclick="openModal(1)">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxu4dNOazibN4iARJRyAJvg_WEutVfIblLxw&s" alt="Irrigação">
-                    <h3>🌾 Irrigação Inteligente</h3>
-                    <p>Sensores modernos ajudam a economizar água.</p>
-                </div>
-                <div class="card" onclick="openModal(2)">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVRAtwWSKrPG8t0dZbfo2qdBneLQimVkOmng&s" alt="Drones">
-                    <h3>🚁 Drones Agrícolas</h3>
-                    <p>Tecnologia aérea monitorando plantações.</p>
-                </div>
-                <div class="card" onclick="openModal(3)">
-                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop" alt="Energia Solar">
-                    <h3>☀️ Energia Solar</h3>
-                    <p>Energia limpa para fazendas sustentáveis.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="ia-section hidden">
-            <h2 class="title">🌱 Central Educacional Agro</h2>
-            <div class="ia-grid">
-                <button onclick="mostrarInfo('agua')">💧 Água</button>
-                <button onclick="mostrarInfo('energia')">☀️ Energia</button>
-                <button onclick="mostrarInfo('drones')">🚁 Drones</button>
-                <button onclick="mostrarInfo('solo')">🌱 Solo</button>
-                <button onclick="mostrarInfo('clima')">🌦️ Clima</button>
-                <button onclick="mostrarInfo('sustentabilidade')">🌎 Sustentabilidade</button>
-                <button onclick="mostrarInfo('geada')">❄️ Geadas</button>
-                <button onclick="mostrarInfo('chuva')">🌧️ Chuvas</button>
-                <button onclick="mostrarInfo('pragas')">🐛 Pragas</button>
-                <button onclick="mostrarInfo('economia')">💰 Economia</button>
-                <button onclick="mostrarInfo('sensores')">📡 Sensores</button>
-                <button onclick="mostrarInfo('carbono')">🌳 Carbono</button>
-            </div>
-            <div class="ia-resposta" id="respostaIA">
-                Clique em um tema acima para aprender mais.
-            </div>
-        </section>
-
-        <section class="map-section hidden" id="mapa">
-            <h2 class="title">🌦️ Clima Agrícola em Tempo Real</h2>
-            <div class="climate-map">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop" alt="Mapa">
-                <div class="map-overlay">
-                    <div class="climate-card">🌡️ Temp <br><b id="tempMapa">18°C</b></div>
-                    <div class="climate-card">🌦️ Clima <br><b id="climaMapa">Limpo</b></div>
-                    <div class="climate-card">💧 Umidade <br><b id="umidadeMapa">82%</b></div>
-                    <div class="climate-card">🌬️ Ventos <br><b id="ventoMapa">9 km/h</b></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="alert-section hidden">
-            <h2 class="title">🚨 Alertas Agrícolas</h2>
-            <div class="weather-box" id="alertaClima">🌦️ Monitorando condições...</div>
-        </section>
-
-        <section class="simulator-section hidden">
-            <h2 class="title">Simulador Sustentável</h2>
-            <div class="simulator-box">
-                <label>💧 Uso de água</label>
-                <input type="range" min="0" max="100" value="50" id="agua">
-                <label>☀️ Energia solar</label>
-                <input type="range" min="0" max="100" value="50" id="solar">
-                <label>🌱 Preservação</label>
-                <input type="range" min="0" max="100" value="50" id="verde">
-                <button onclick="calcularSustentabilidade()">Calcular</button>
-                <div id="resultadoSimulador"></div>
-            </div>
-        </section>
-
-        <section class="help-section hidden">
-            <h2 class="title">📞 Suporte e Recursos</h2>
-            <div class="help-grid">
-                <div class="help-card">
-                    <h3>📡 Simepar Paraná</h3>
-                    <p>Previsões meteorológicas oficiais do Paraná.</p>
-                    <a href="https://www.simepar.br" target="_blank" class="btn">Acessar</a>
-                </div>
-                </div>
-            <div class="help-contact">
-                <button onclick="abrirAjuda()">Abrir Central de Ajuda</button>
-            </div>
-        </section>
-
-        <footer>
-            <h2>🌱 Agro Forte - Futuro Sustentável</h2>
-        </footer>
-    </div>
-
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalText"></p>
-        </div>
-    </div>
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
     </div>
 
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1>AgroFuture</h1>
+            <p>Inovação e Sustentabilidade no Campo</p>
+            <button class="btn-agro" onclick="entrarSite()">Entrar no Site</button>
+        </div>
+    </div>
+
+    <div id="site-content" style="display: none; opacity: 0;">
+        <div id="particles-js"></div>
+
+        <nav class="navbar">
+            <div class="logo">🌿 AgroFuture</div>
+            <div class="nav-links">
+                <a href="#clima">Clima</a>
+                <a href="#diagnostico">Diagnóstico</a>
+            </div>
+            <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+        </nav>
+
+        <main class="container">
+            <section id="clima" class="section">
+                <h2 class="title">Clima em Tempo Real</h2>
+                <div class="weather-box" id="weather-result">
+                    <p>Detectando localização...</p>
+                </div>
+            </section>
+
+            <section id="diagnostico" class="section">
+                <h2 class="title">Diagnóstico Agrícola Inteligente</h2>
+                <div class="diagnostico-box">
+                    <div class="busca-cidade">
+                        <label for="cidadeInput">Sua cidade no Paraná:</label>
+                        <input type="text" id="cidadeInput" placeholder="Ex: Guarapuava..." autocomplete="off">
+                        <div id="sugestoesCidade"></div>
+                    </div>
+
+                    <div class="filtros-agro">
+                        <div class="filtro-item">
+                            <label>Porte</label>
+                            <select id="porteProducao">
+                                <option value="pequeno">Pequeno</option>
+                                <option value="medio">Médio</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                        <div class="filtro-item">
+                            <label>Área (ha)</label>
+                            <input type="number" id="areaHectares" placeholder="Ex: 20">
+                        </div>
+                    </div>
+
+                    <button class="btn-agro" onclick="analisarCidade()">Gerar Diagnóstico</button>
+                </div>
+
+                <div id="resultadoCultivos"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     <script src="script.js"></script>
 </body>
 </html>
