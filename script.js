@@ -702,9 +702,10 @@ entry.target.classList.add('show');
 document.querySelectorAll('.hidden')
 .forEach((el)=>observer.observe(el));
 
-// ================================
+// ==========================================
 // DIAGNÓSTICO AGRÍCOLA IA
-// ================================
+// ==========================================
+
 function analisarCidade(){
 
 const cidade = document
@@ -734,62 +735,59 @@ venda: "Feiras urbanas e mercados municipais."
 culturas: "Café, soja, milho e frutas.",
 clima: "Clima subtropical quente.",
 venda: "Mercados regionais e cooperativas."
+},
+
+"maringa": {
+culturas: "Soja, milho e hortaliças.",
+clima: "Quente e úmido.",
+venda: "Cooperativas e exportação."
 }
 
 };
 
-if(cidades[cidade]){
+// ==========================================
+// CIDADE NÃO ENCONTRADA
+// ==========================================
+
+if(!cidades[cidade]){
 
 resultado.innerHTML = `
 
-<div class="resultado-hero">
+<div class="cultivo-card">
 
-<div class="hero-icone">
-🌱
-</div>
-
-<h2>
-Cultivos indicados para
-<span>
-${cidade.charAt(0).toUpperCase() + cidade.slice(1)}
-</span>
-</h2>
+<h3>
+❌ Cidade não encontrada
+</h3>
 
 <p>
-Análise agrícola inteligente baseada no clima
- e potencial sustentável da região.
+Digite uma cidade cadastrada.
 </p>
 
 </div>
 
-<div class="resultado-grid">
+`;
 
-<div class="resultado-card">
 
-<div class="icone-card">
-🌾
-</div>
-
-<h3>
-});
-
-  // ROLAR AUTOMATICAMENTE
+// ROLAR AUTOMÁTICO
 
 setTimeout(()=>{
 
 resultado.scrollIntoView({
 
 behavior:'smooth',
-
 block:'start'
 
 });
 
 },200);
-  
+
+return;
+
 }
 
-else{
+// ==========================================
+// RESULTADO
+// ==========================================
 
 resultado.innerHTML = `
 
@@ -867,6 +865,27 @@ ${cidades[cidade].venda}
 
 `;
 
+
+// ==========================================
+// ROLAR AUTOMATICAMENTE
+// ==========================================
+
+setTimeout(()=>{
+
+resultado.scrollIntoView({
+
+behavior:'smooth',
+block:'start'
+
+});
+
+},200);
+
+}
+
+// ==========================================
+// LOAD FINAL
+// ==========================================
 
 window.addEventListener('load',()=>{
 
