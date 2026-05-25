@@ -58,9 +58,9 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 5%;
-flex-wrap:wrap;
+padding:12px 4%;
 gap:20px;
+flex-wrap:wrap;
 }
 
 .logo{
@@ -99,14 +99,25 @@ gap:10px;
 }
 
 .buttons-nav button{
-padding:10px 15px;
+
+padding:8px 14px;
+
+font-size:14px;
+
 border:none;
+
 border-radius:10px;
+
 cursor:pointer;
+
 background:#1f8f3d;
+
 color:white;
+
 font-weight:bold;
+
 transition:0.3s;
+
 }
 
 .buttons-nav button:hover{
