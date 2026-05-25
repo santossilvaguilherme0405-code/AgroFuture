@@ -1054,3 +1054,55 @@ window.addEventListener('load',()=>{
 document.body.style.opacity='1';
 
 });
+
+// ==========================================
+// AUTOCOMPLETE DE CIDADES
+// ==========================================
+
+const cidadesPR = Object.keys(cidades);
+
+const inputCidade =
+document.getElementById('cidadeInput');
+
+const sugestoes =
+document.getElementById('sugestoesCidade');
+
+inputCidade.addEventListener('input', ()=>{
+
+const valor =
+inputCidade.value.toLowerCase();
+
+sugestoes.innerHTML = '';
+
+if(valor.length < 1){
+return;
+}
+
+const filtradas = cidadesPR.filter(cidade =>
+
+cidade.toLowerCase().includes(valor)
+
+);
+
+filtradas.forEach(cidade => {
+
+const item =
+document.createElement('div');
+
+item.classList.add('sugestao-item');
+
+item.innerText = cidade;
+
+item.onclick = ()=>{
+
+inputCidade.value = cidade;
+
+sugestoes.innerHTML = '';
+
+};
+
+sugestoes.appendChild(item);
+
+});
+
+});
