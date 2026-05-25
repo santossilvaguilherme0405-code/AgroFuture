@@ -860,7 +860,9 @@ block:'start'
 
 },200);
   
-}else{
+}
+
+else{
 
 resultado.innerHTML = `
 
