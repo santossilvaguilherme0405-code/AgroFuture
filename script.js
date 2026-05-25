@@ -65,28 +65,36 @@ document.body.classList.toggle('light-mode');
 
 
 // ==========================================
-// ZOOM DA PÁGINA
+// ZOOM CORRIGIDO
 // ==========================================
 
-let zoomLevel = 1;
+let zoomLevel = 100;
 
 document.getElementById('zoomIn')
 .addEventListener('click', () => {
 
-zoomLevel += 0.1;
+if(zoomLevel < 140){
+
+zoomLevel += 10;
 
 document.body.style.zoom =
 zoomLevel + '%';
+
+}
 
 });
 
 document.getElementById('zoomOut')
 .addEventListener('click', () => {
 
-zoomLevel -= 0.1;
+if(zoomLevel > 70){
 
-document.body.style.zoom = zoomLevel;
+zoomLevel -= 10;
+
+document.body.style.zoom =
 zoomLevel + '%';
+
+}
 
 });
 
