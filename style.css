@@ -142,8 +142,9 @@ max-width:800px;
 padding:40px;
 }
 
+
 .intro-content h1{
-font-size:90px;
+font-size:clamp(45px,10vw,90px);
 margin-bottom:20px;
 color:#00ff88;
 text-shadow:0 0 20px rgba(0,255,136,0.5);
