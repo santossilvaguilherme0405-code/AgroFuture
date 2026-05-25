@@ -68,12 +68,12 @@ document.body.classList.toggle('light-mode');
 // ZOOM DA PÁGINA
 // ==========================================
 
-let zoomLevel = 100;
+let zoomLevel = 1;
 
 document.getElementById('zoomIn')
 .addEventListener('click', () => {
 
-zoomLevel += 10;
+zoomLevel += 0.1;
 
 document.body.style.zoom =
 zoomLevel + '%';
@@ -83,7 +83,7 @@ zoomLevel + '%';
 document.getElementById('zoomOut')
 .addEventListener('click', () => {
 
-zoomLevel -= 10;
+zoomLevel -= 0.1;
 
 document.body.style.zoom = zoomLevel;
 zoomLevel + '%';
