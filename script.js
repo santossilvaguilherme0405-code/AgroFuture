@@ -706,154 +706,58 @@ document.querySelectorAll('.hidden')
 // DIAGNÓSTICO AGRÍCOLA IA
 // ================================
 
-function analisarCidade(){
+// ================================
+'Foz do Iguaçu',
+'Toledo',
+'Paranavaí',
+'Campo Mourão',
+'Irati',
+'Castro',
+'Prudentópolis'
 
-const cidade = document
-.getElementById('cidadeInput')
-.value
-.toLowerCase()
-.trim();
+];
 
-const resultado = document
-.getElementById('resultadoCultivos');
+const inputCidade =
+document.getElementById('cidadeInput');
 
-const cidades = {
+const sugestoes =
+document.getElementById('sugestoesCidade');
 
-"guarapuava": {
-culturas: "Erva-mate, soja, milho, trigo, batata e morango.",
-clima: "Clima frio com geadas frequentes.",
-venda: "Feiras rurais, cooperativas e mercados locais."
-},
+inputCidade.addEventListener('input', ()=>{
 
-"curitiba": {
-culturas: "Hortaliças, flores, morango e alface.",
-clima: "Clima úmido e frio.",
-venda: "Feiras urbanas e mercados municipais."
-},
+const valor =
+inputCidade.value.toLowerCase();
 
-"londrina": {
-culturas: "Café, soja, milho e frutas.",
-clima: "Clima subtropical quente.",
-venda: "Mercados regionais e cooperativas."
-}
+sugestoes.innerHTML = '';
+
+if(valor.length < 1) return;
+
+const filtradas = cidadesPR.filter(cidade =>
+cidade.toLowerCase().includes(valor)
+);
+
+filtradas.forEach(cidade => {
+
+const item =
+document.createElement('div');
+
+item.classList.add('sugestao-item');
+
+item.innerText = cidade;
+
+item.onclick = ()=>{
+
+inputCidade.value = cidade;
+
+sugestoes.innerHTML = '';
 
 };
 
-if(cidades[cidade]){
-
-resultado.innerHTML = `
-
-<div class="resultado-hero">
-
-<div class="hero-icone">
-🌱
-</div>
-
-<h2>
-Cultivos indicados para
-<span>
-${cidade.charAt(0).toUpperCase() + cidade.slice(1)}
-</span>
-</h2>
-
-<p>
-Análise agrícola inteligente baseada no clima
-e potencial sustentável da região.
-</p>
-
-</div>
-
-<div class="resultado-grid">
-
-<div class="resultado-card">
-
-<div class="icone-card">
-🌾
-</div>
-
-<h3>
-Cultivos Recomendados
-</h3>
-
-<p>
-${cidades[cidade].culturas}
-</p>
-
-</div>
-
-<div class="resultado-card">
-
-<div class="icone-card">
-🌦️
-</div>
-
-<h3>
-Condições Climáticas
-</h3>
-
-<p>
-${cidades[cidade].clima}
-</p>
-
-</div>
-
-<div class="resultado-card">
-
-<div class="icone-card">
-🛒
-</div>
-
-<h3>
-Mercado e Vendas
-</h3>
-
-<p>
-${cidades[cidade].venda}
-</p>
-
-</div>
-
-</div>
-
-`;
-
-setTimeout(()=>{
-
-document
-.getElementById('resultadoCultivos')
-.scrollIntoView({
-
-behavior:'smooth',
-
-block:'start'
+sugestoes.appendChild(item);
 
 });
 
-},300);
-
-}
-
-else{
-
-resultado.innerHTML = `
-
-<div class="cultivo-card">
-
-<h3>
-❌ Cidade não encontrada
-</h3>
-
-<p>
-Digite uma cidade cadastrada.
-</p>
-
-</div>
-
-`;
-
-}
-
-}
+});
 
   // ROLAR AUTOMATICAMENTE
 
@@ -949,69 +853,6 @@ ${cidades[cidade].venda}
 
 `;
 
-// ==========================================
-// AUTOCOMPLETE DE CIDADES
-// ==========================================
-
-const cidadesPR = [
-
-'Guarapuava',
-'Curitiba',
-'Londrina',
-'Maringá',
-'Cascavel',
-'Ponta Grossa',
-'Foz do Iguaçu',
-'Toledo',
-'Paranavaí',
-'Campo Mourão',
-'Irati',
-'Castro',
-'Prudentópolis'
-
-];
-
-const inputCidade =
-document.getElementById('cidadeInput');
-
-const sugestoes =
-document.getElementById('sugestoesCidade');
-
-inputCidade.addEventListener('input', ()=>{
-
-const valor =
-inputCidade.value.toLowerCase();
-
-sugestoes.innerHTML = '';
-
-if(valor.length < 1) return;
-
-const filtradas = cidadesPR.filter(cidade =>
-cidade.toLowerCase().includes(valor)
-);
-
-filtradas.forEach(cidade => {
-
-const item =
-document.createElement('div');
-
-item.classList.add('sugestao-item');
-
-item.innerText = cidade;
-
-item.onclick = ()=>{
-
-inputCidade.value = cidade;
-
-sugestoes.innerHTML = '';
-
-};
-
-sugestoes.appendChild(item);
-
-});
-
-});
 
 window.addEventListener('load',()=>{
 
