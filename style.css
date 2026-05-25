@@ -46,6 +46,7 @@ HEADER
 =============================== */
 
 header{
+
 position:fixed;
 top:0;
 left:0;
@@ -56,10 +57,11 @@ background:rgba(0,0,0,0.45);
 
 backdrop-filter:blur(12px);
 
-padding:4px 0;
+padding:2px 0;
 
 border-bottom:
 1px solid rgba(255,255,255,0.08);
+
 }
 
 /* ===============================
@@ -78,11 +80,11 @@ align-items:center;
 
 justify-content:space-between;
 
-padding:10px 4%;
+padding:5px 3%;
 
 gap:10px;
 
-flex-wrap:wrap;
+flex-wrap:nowrap;
 
 }
 
@@ -90,7 +92,7 @@ flex-wrap:wrap;
 
 .logo{
 
-font-size:42px;
+font-size:26px;
 
 font-weight:800;
 
