@@ -9,6 +9,11 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
+img{
+max-width:100%;
+display:block;
+}
+
 /* ===============================
 BODY
 =============================== */
