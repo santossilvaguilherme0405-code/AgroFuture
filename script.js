@@ -741,6 +741,168 @@ venda: "Mercados regionais e cooperativas."
 culturas: "Soja, milho e hortaliças.",
 clima: "Quente e úmido.",
 venda: "Cooperativas e exportação."
+},
+
+"cascavel": {
+culturas: "Soja, milho e trigo.",
+clima: "Subtropical.",
+venda: "Cooperativas agrícolas."
+},
+
+"foz do iguaçu": {
+culturas: "Milho, mandioca e frutas.",
+clima: "Quente e úmido.",
+venda: "Mercados regionais."
+},
+
+"ponta grossa": {
+culturas: "Soja, trigo e cevada.",
+clima: "Frio moderado.",
+venda: "Cooperativas e indústria."
+},
+
+"toledo": {
+culturas: "Milho, soja e suinocultura.",
+clima: "Subtropical quente.",
+venda: "Agroindústrias."
+},
+
+"irati": {
+culturas: "Batata, feijão e erva-mate.",
+clima: "Frio e úmido.",
+venda: "Feiras locais."
+},
+
+"castro": {
+culturas: "Leite, soja e milho.",
+clima: "Clima ameno.",
+venda: "Cooperativas leiteiras."
+},
+
+"prudentopolis": {
+culturas: "Feijão, milho e erva-mate.",
+clima: "Frio.",
+venda: "Mercados regionais."
+},
+
+"campo mourao": {
+culturas: "Soja e milho.",
+clima: "Quente moderado.",
+venda: "Exportação agrícola."
+},
+
+"paranavai": {
+culturas: "Mandioca e laranja.",
+clima: "Quente.",
+venda: "Indústrias alimentícias."
+},
+
+"umuarama": {
+culturas: "Mandioca, milho e pecuária.",
+clima: "Subtropical quente.",
+venda: "Mercados locais."
+},
+
+"apucarana": {
+culturas: "Café e milho.",
+clima: "Ameno.",
+venda: "Cooperativas."
+},
+
+"arapongas": {
+culturas: "Milho e soja.",
+clima: "Quente moderado.",
+venda: "Mercados regionais."
+},
+
+"francisco beltrao": {
+culturas: "Feijão e milho.",
+clima: "Úmido.",
+venda: "Cooperativas agrícolas."
+},
+
+"dois vizinhos": {
+culturas: "Soja e aves.",
+clima: "Subtropical.",
+venda: "Agroindústria."
+},
+
+"guaira": {
+culturas: "Soja e milho.",
+clima: "Quente.",
+venda: "Exportação."
+},
+
+"jacarezinho": {
+culturas: "Café e cana-de-açúcar.",
+clima: "Quente.",
+venda: "Usinas e cooperativas."
+},
+
+"paranagua": {
+culturas: "Banana e mandioca.",
+clima: "Litorâneo úmido.",
+venda: "Porto exportador."
+},
+
+"matinhos": {
+culturas: "Banana e hortaliças.",
+clima: "Litorâneo.",
+venda: "Mercados locais."
+},
+
+"guaratuba": {
+culturas: "Banana e palmito.",
+clima: "Úmido tropical.",
+venda: "Feiras e turismo."
+},
+
+"palmas": {
+culturas: "Batata e soja.",
+clima: "Frio intenso.",
+venda: "Cooperativas."
+},
+
+"telemaco borba": {
+culturas: "Silvicultura e soja.",
+clima: "Ameno.",
+venda: "Indústria florestal."
+},
+
+"cornelio procopio": {
+culturas: "Café e milho.",
+clima: "Subtropical.",
+venda: "Mercados agrícolas."
+},
+
+"ivaipora": {
+culturas: "Feijão e milho.",
+clima: "Quente.",
+venda: "Feiras rurais."
+},
+
+"assis chateaubriand": {
+culturas: "Soja e trigo.",
+clima: "Subtropical.",
+venda: "Cooperativas."
+},
+
+"medianeira": {
+culturas: "Milho e soja.",
+clima: "Úmido.",
+venda: "Agroindústrias."
+},
+
+"pitanga": {
+culturas: "Erva-mate e milho.",
+clima: "Frio moderado.",
+venda: "Mercados locais."
+},
+
+"lapa": {
+culturas: "Batata e feijão.",
+clima: "Frio.",
+venda: "Cooperativas."
 }
 
 };
