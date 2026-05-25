@@ -630,6 +630,14 @@ background:#f1f1f1 !important;
 color:#111 !important;
 }
 
+input::placeholder{
+color:#cccccc;
+}
+
+.light-mode input::placeholder{
+color:#555;
+}
+
 /* HERO CONTINUA BRANCA */
 
 .light-mode .hero-content h1,
