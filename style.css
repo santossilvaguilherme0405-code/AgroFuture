@@ -555,18 +555,18 @@ align-items:stretch;
 
 .ia-grid button{
 
-padding:18px;
+padding:14px;
 
 border:none;
 
-border-radius:20px;
+border-radius:18px;
 
 background:
 linear-gradient(45deg,#00ff88,#00c853);
 
 color:#07140b;
 
-font-size:17px;
+font-size:16px;
 
 font-weight:700;
 
@@ -574,9 +574,10 @@ cursor:pointer;
 
 transition:0.4s;
 
-min-height:90px;
+height:90px;
 
 }
+
 .ia-grid button:hover{
 transform:translateY(-8px) scale(1.03);
 box-shadow:0 0 30px rgba(0,255,136,0.5);
@@ -637,7 +638,7 @@ CENTRAL DE AJUDA
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
+repeat(3,1fr);
 
 gap:25px;
 
@@ -1740,6 +1741,23 @@ flex-wrap:wrap;
 
 justify-content:center;
 
+}
+
+}
+
+@media(max-width:900px){
+
+.ia-grid{
+grid-template-columns:1fr;
+}
+
+.help-grid{
+grid-template-columns:1fr;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
 }
 
 }
