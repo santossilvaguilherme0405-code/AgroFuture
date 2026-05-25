@@ -198,7 +198,7 @@ const temp = Math.round(data.main.temp);
 // CLIMA PRINCIPAL
 // ==========================================
 
-document.querySelector('.weather-box').innerHTML = `
+document.getElementById('alertaClima').innerHTML = `
 
 <h3>🌦️ ${data.name}</h3>
 
