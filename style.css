@@ -1457,26 +1457,6 @@ transform:translateY(0px);
 /* RESULTADO HORIZONTAL */
 /* ====================================== */
 
-.resultado-grid{
-
-width:100%;
-
-display:flex !important;
-
-flex-direction:row !important;
-
-justify-content:center;
-
-align-items:stretch;
-
-gap:25px;
-
-margin-top:40px;
-
-flex-wrap:nowrap;
-
-}
-
 .resultado-card{
 
 width:33%;
