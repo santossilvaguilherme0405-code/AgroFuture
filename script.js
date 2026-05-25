@@ -65,13 +65,23 @@ document.body.classList.toggle('light-mode');
 
 
 // ==========================================
-// ZOOM CORRIGIDO
+// ZOOM 
 // ==========================================
 
 let zoomLevel = 100;
 
+// RESETAR ZOOM AO ABRIR SITE
+window.addEventListener('load',()=>{
+
+zoomLevel = 100;
+
+document.body.style.zoom = '100%';
+
+});
+
+// BOTÃO +
 document.getElementById('zoomIn')
-.addEventListener('click', () => {
+.addEventListener('click',()=>{
 
 if(zoomLevel < 140){
 
@@ -84,8 +94,9 @@ zoomLevel + '%';
 
 });
 
+// BOTÃO -
 document.getElementById('zoomOut')
-.addEventListener('click', () => {
+.addEventListener('click',()=>{
 
 if(zoomLevel > 70){
 
