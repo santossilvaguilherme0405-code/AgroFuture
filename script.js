@@ -68,24 +68,33 @@ document.body.classList.toggle('light-mode');
 // ZOOM DA PÁGINA
 // ==========================================
 
-let zoomLevel = 100;
+let zoomLevel = 1;
 
-document.getElementById('zoomIn').addEventListener('click', () => {
+document.getElementById('zoomIn')
+.addEventListener('click', () => {
 
-zoomLevel += 10;
+zoomLevel += 0.1;
 
-document.body.style.zoom = zoomLevel + '%';
+document.body.style.transform =
+`scale(${zoomLevel})`;
 
-});
-
-document.getElementById('zoomOut').addEventListener('click', () => {
-
-zoomLevel -= 10;
-
-document.body.style.zoom = zoomLevel + '%';
+document.body.style.transformOrigin =
+'top center';
 
 });
 
+document.getElementById('zoomOut')
+.addEventListener('click', () => {
+
+zoomLevel -= 0.1;
+
+document.body.style.transform =
+`scale(${zoomLevel})`;
+
+document.body.style.transformOrigin =
+'top center';
+
+});
 
 // ==========================================
 // MODAL DAS TECNOLOGIAS
