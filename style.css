@@ -543,14 +543,18 @@ cursor:pointer;
 }
 
 /* ===============================
-HELP
+CENTRAL DE AJUDA
 =============================== */
 
 .help-grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-bottom:50px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
 }
 
 .help-card{
@@ -1556,4 +1560,61 @@ flex-wrap:wrap;
 flex:1 1 300px;
 min-width:280px;
 max-width:340px;
+}
+
+.resultado-hero{
+
+background:
+linear-gradient(
+135deg,
+rgba(0,255,136,0.18),
+rgba(0,0,0,0.35)
+);
+
+padding:60px 30px;
+
+border-radius:35px;
+
+margin-bottom:40px;
+
+box-shadow:
+0 0 40px rgba(0,255,136,0.15);
+
+}
+
+.resultado-card{
+
+background:
+rgba(255,255,255,0.07);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 0 20px rgba(0,0,0,0.2);
+
+}
+
+.resultado-card h3{
+
+margin-top:15px;
+
+font-size:26px;
+
+}
+
+.icone-card{
+
+font-size:50px;
+
+margin-bottom:10px;
+
+}
+
+.resultado-card p{
+
+line-height:1.8;
+
+font-size:17px;
+
 }
