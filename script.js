@@ -65,45 +65,45 @@ document.body.classList.toggle('light-mode');
 
 
 // ==========================================
-// ZOOM 
+// ZOOM SEGURO
 // ==========================================
 
-let zoomLevel = 100;
+let zoomAtual = 1;
 
-// RESETAR ZOOM AO ABRIR SITE
+// RESETAR AO ABRIR
 window.addEventListener('load',()=>{
 
-zoomLevel = 100;
+zoomAtual = 1;
 
-document.body.style.zoom = '100%';
+document.documentElement.style.fontSize = '100%';
 
 });
 
-// BOTÃO +
+// ZOOM +
 document.getElementById('zoomIn')
 .addEventListener('click',()=>{
 
-if(zoomLevel < 140){
+if(zoomAtual < 1.3){
 
-zoomLevel += 10;
+zoomAtual += 0.1;
 
-document.body.style.zoom =
-zoomLevel + '%';
+document.documentElement.style.fontSize =
+(zoomAtual * 100) + '%';
 
 }
 
 });
 
-// BOTÃO -
+// ZOOM -
 document.getElementById('zoomOut')
 .addEventListener('click',()=>{
 
-if(zoomLevel > 70){
+if(zoomAtual > 0.8){
 
-zoomLevel -= 10;
+zoomAtual -= 0.1;
 
-document.body.style.zoom =
-zoomLevel + '%';
+document.documentElement.style.fontSize =
+(zoomAtual * 100) + '%';
 
 }
 
