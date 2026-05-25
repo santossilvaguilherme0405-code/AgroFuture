@@ -841,32 +841,21 @@ RESPONSIVO
 @media(max-width:900px){
 
 nav{
-
 flex-direction:column;
-
-}
-
-.hero-content h1{
-
-font-size:55px;
-
-}
-
-.hero-content p{
-
-font-size:20px;
-
-}
-
 }
 
 nav ul{
 flex-wrap:wrap;
 justify-content:center;
+gap:15px;
 }
 
 .hero-content h1{
-font-size:50px;
+font-size:55px;
+}
+
+.hero-content p{
+font-size:20px;
 }
 
 .title{
@@ -874,7 +863,6 @@ font-size:35px;
 }
 
 .weather-box,
-.simulator-box,
 .ia-resposta{
 padding:25px;
 }
