@@ -624,6 +624,12 @@ background:#d8ecd9;
 color:#111;
 }
 
+.light-mode input,
+.light-mode select{
+background:#f1f1f1 !important;
+color:#111 !important;
+}
+
 /* HERO CONTINUA BRANCA */
 
 .light-mode .hero-content h1,
