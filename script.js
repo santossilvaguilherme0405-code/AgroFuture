@@ -705,58 +705,72 @@ document.querySelectorAll('.hidden')
 // ================================
 // DIAGNÓSTICO AGRÍCOLA IA
 // ================================
+function analisarCidade(){
 
-// ================================
-'Foz do Iguaçu',
-'Toledo',
-'Paranavaí',
-'Campo Mourão',
-'Irati',
-'Castro',
-'Prudentópolis'
+const cidade = document
+.getElementById('cidadeInput')
+.value
+.toLowerCase()
+.trim();
 
-];
+const resultado = document
+.getElementById('resultadoCultivos');
 
-const inputCidade =
-document.getElementById('cidadeInput');
+const cidades = {
 
-const sugestoes =
-document.getElementById('sugestoesCidade');
+"guarapuava": {
+culturas: "Erva-mate, soja, milho, trigo, batata e morango.",
+clima: "Clima frio com geadas frequentes.",
+venda: "Feiras rurais, cooperativas e mercados locais."
+},
 
-inputCidade.addEventListener('input', ()=>{
+"curitiba": {
+culturas: "Hortaliças, flores, morango e alface.",
+clima: "Clima úmido e frio.",
+venda: "Feiras urbanas e mercados municipais."
+},
 
-const valor =
-inputCidade.value.toLowerCase();
-
-sugestoes.innerHTML = '';
-
-if(valor.length < 1) return;
-
-const filtradas = cidadesPR.filter(cidade =>
-cidade.toLowerCase().includes(valor)
-);
-
-filtradas.forEach(cidade => {
-
-const item =
-document.createElement('div');
-
-item.classList.add('sugestao-item');
-
-item.innerText = cidade;
-
-item.onclick = ()=>{
-
-inputCidade.value = cidade;
-
-sugestoes.innerHTML = '';
+"londrina": {
+culturas: "Café, soja, milho e frutas.",
+clima: "Clima subtropical quente.",
+venda: "Mercados regionais e cooperativas."
+}
 
 };
 
-sugestoes.appendChild(item);
+if(cidades[cidade]){
 
-});
+resultado.innerHTML = `
 
+<div class="resultado-hero">
+
+<div class="hero-icone">
+🌱
+</div>
+
+<h2>
+Cultivos indicados para
+<span>
+${cidade.charAt(0).toUpperCase() + cidade.slice(1)}
+</span>
+</h2>
+
+<p>
+Análise agrícola inteligente baseada no clima
+ e potencial sustentável da região.
+</p>
+
+</div>
+
+<div class="resultado-grid">
+
+<div class="resultado-card">
+
+<div class="icone-card">
+🌾
+</div>
+
+<h3>
 });
 
   // ROLAR AUTOMATICAMENTE
