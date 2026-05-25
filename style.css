@@ -80,6 +80,10 @@ nav ul li a:hover{
 color:#00ff88;
 }
 
+section{
+scroll-margin-top:120px;
+}
+
 /* ===============================
 BOTÕES NAV
 =============================== */
