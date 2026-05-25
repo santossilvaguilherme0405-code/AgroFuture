@@ -85,7 +85,7 @@ document.getElementById('zoomOut')
 
 zoomLevel -= 10;
 
-document.body.style.zoom =
+document.body.style.zoom = zoomLevel;
 zoomLevel + '%';
 
 });
