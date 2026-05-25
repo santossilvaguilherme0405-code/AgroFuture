@@ -295,7 +295,9 @@ align-items:center;
 
 text-align:center;
 
-padding-top:140px;
+padding-top:120px;
+
+padding-bottom:60px;
 
 padding-left:20px;
 
@@ -397,7 +399,6 @@ SEÇÕES
 .section,
 .weather-section,
 .map-section,
-.simulator-section,
 .ia-section,
 .help-section,
 .alert-section{
@@ -455,7 +456,6 @@ BOXES
 =============================== */
 
 .weather-box,
-.simulator-box,
 .ia-resposta,
 .help-contact{
 background:rgba(255,255,255,0.05);
@@ -531,49 +531,6 @@ box-shadow:0 0 25px rgba(0,255,136,0.5);
 .climate-card b{
 font-size:35px;
 color:#00ff88;
-}
-
-/* ===============================
-SIMULADOR
-=============================== */
-
-.simulator-box{
-max-width:800px;
-margin:auto;
-}
-
-.simulator-box label{
-display:block;
-margin-top:20px;
-margin-bottom:10px;
-font-size:18px;
-}
-
-.simulator-box input{
-width:100%;
-margin-bottom:20px;
-}
-
-.simulator-box button{
-margin-top:20px;
-padding:15px 25px;
-border:none;
-border-radius:15px;
-background:#00c853;
-color:white;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-.simulator-box button:hover{
-transform:scale(1.05);
-}
-
-#resultadoSimulador{
-margin-top:30px;
-font-size:20px;
-line-height:1.8;
 }
 
 /* ===============================
