@@ -229,8 +229,23 @@ animation:fadeIntro 1s ease;
 }
 
 .intro-content{
-max-width:800px;
+
+max-width:900px;
+
 padding:40px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+margin:auto;
+
 }
 
 
