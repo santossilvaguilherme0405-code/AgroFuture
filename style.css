@@ -1908,3 +1908,12 @@ body{
 overflow-x:hidden;
 
 }
+
+html {
+    transition: font-size 0.2s ease; /* Deixa o zoom suave */
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita barra de rolagem lateral estranha no zoom */
+}
