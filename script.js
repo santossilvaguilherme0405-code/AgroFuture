@@ -67,55 +67,52 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-   // ==========================================
-// ZOOM REAL FUNCIONAL
+// ==========================================
+// ZOOM
 // ==========================================
 
-let zoomLevel = 100;
+let zoomLevel = 1; // 1 = 100%
 
-const zoomIn =
-document.getElementById('zoomIn');
+const zoomIn = document.getElementById('zoomIn');
+const zoomOut = document.getElementById('zoomOut');
 
-const zoomOut =
-document.getElementById('zoomOut');
-
-function aplicarZoom(){
-
-document.body.style.zoom =
-zoomLevel + "%";
-
+function aplicarZoom() {
+    // Usamos transform-origin para o zoom começar do topo e centro
+    document.body.style.transform = `scale(${zoomLevel})`;
+    document.body.style.transformOrigin = "top center";
+    
+    // Ajuste opcional: impede que o body fique menor que a tela
+    if (zoomLevel > 1) {
+        document.body.style.width = (100 / zoomLevel) + "%";
+        document.body.style.left = "50%";
+        document.body.style.translateX = "-50%";
+    } else {
+        document.body.style.width = "100%";
+    }
 }
 
-if(zoomIn){
-
-zoomIn.addEventListener('click',()=>{
-
-zoomLevel += 10;
-
-if(zoomLevel > 150){
-zoomLevel = 150;
+// Alternativa mais estável para sites complexos: Ajustar o tamanho da fonte
+function aplicarZoomAlternativo() {
+    // Transforma o nível em porcentagem (ex: 1.1 = 110%)
+    document.documentElement.style.fontSize = (zoomLevel * 100) + "%";
 }
 
-aplicarZoom();
-
-});
-
+if (zoomIn) {
+    zoomIn.addEventListener('click', () => {
+        if (zoomLevel < 1.5) { // Limite máximo de 150%
+            zoomLevel += 0.1;
+            aplicarZoomAlternativo();
+        }
+    });
 }
 
-if(zoomOut){
-
-zoomOut.addEventListener('click',()=>{
-
-zoomLevel -= 10;
-
-if(zoomLevel < 80){
-zoomLevel = 80;
-}
-
-aplicarZoom();
-
-});
-
+if (zoomOut) {
+    zoomOut.addEventListener('click', () => {
+        if (zoomLevel > 0.8) { // Limite mínimo de 80%
+            zoomLevel -= 0.1;
+            aplicarZoomAlternativo();
+        }
+    });
 }
 
     // ==========================================
