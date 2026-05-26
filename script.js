@@ -1,3 +1,13 @@
+window.addEventListener('load',()=>{
+
+document.body.style.zoom = '100%';
+
+document.body.style.transform = 'none';
+
+document.documentElement.style.fontSize = '100%';
+
+});
+
 // ==========================================
 // INICIALIZAÇÃO DO VLibras
 // ==========================================
