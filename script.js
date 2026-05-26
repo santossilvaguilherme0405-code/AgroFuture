@@ -67,63 +67,56 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // ==========================================
-    // ZOOM
-    // ==========================================
+   // ==========================================
+// ZOOM REAL FUNCIONAL
+// ==========================================
 
-    let zoomLevel = 1;
+let zoomLevel = 100;
 
-    const siteContent =
-        document.getElementById('site-content');
+const zoomIn =
+document.getElementById('zoomIn');
 
-    const zoomIn =
-        document.getElementById('zoomIn');
+const zoomOut =
+document.getElementById('zoomOut');
 
-    const zoomOut =
-        document.getElementById('zoomOut');
+function aplicarZoom(){
 
-    function atualizarZoom() {
+document.body.style.zoom =
+zoomLevel + "%";
 
-        if (!siteContent) return;
+}
 
-        siteContent.style.transform =
-            `scale(${zoomLevel})`;
+if(zoomIn){
 
-        siteContent.style.width =
-            `${100 / zoomLevel}%`;
-    }
+zoomIn.addEventListener('click',()=>{
 
-    if (zoomIn) {
+zoomLevel += 10;
 
-        zoomIn.addEventListener('click', () => {
+if(zoomLevel > 150){
+zoomLevel = 150;
+}
 
-            zoomLevel += 0.1;
+aplicarZoom();
 
-            if (zoomLevel > 1.5) {
-                zoomLevel = 1.5;
-            }
+});
 
-            atualizarZoom();
+}
 
-        });
+if(zoomOut){
 
-    }
+zoomOut.addEventListener('click',()=>{
 
-    if (zoomOut) {
+zoomLevel -= 10;
 
-        zoomOut.addEventListener('click', () => {
+if(zoomLevel < 80){
+zoomLevel = 80;
+}
 
-            zoomLevel -= 0.1;
+aplicarZoom();
 
-            if (zoomLevel < 0.8) {
-                zoomLevel = 0.8;
-            }
+});
 
-            atualizarZoom();
-
-        });
-
-    }
+}
 
     // ==========================================
     // ANIMAÇÕES
