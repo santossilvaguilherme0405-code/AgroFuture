@@ -75,54 +75,34 @@ document.body.classList.toggle('light-mode');
 
 
 // ==========================================
-// ZOOM DA PÁGINA
+// ZOOM 
 // ==========================================
 
-let zoomLevel = 1;
+let zoomLevel = 100;
 
-// RESETA O ZOOM SEMPRE QUE ENTRA
-
-document.body.style.zoom = "100%";
-
-window.addEventListener('load', () => {
-
-zoomLevel = 1;
+window.addEventListener('load',()=>{
 
 document.body.style.zoom = "100%";
-
-document.body.style.transform = "none";
 
 });
-
-// BOTÃO +
 
 document.getElementById('zoomIn')
-.addEventListener('click', () => {
+.addEventListener('click',()=>{
 
-if(zoomLevel < 1.3){
-
-zoomLevel += 0.1;
+zoomLevel += 10;
 
 document.body.style.zoom =
-(zoomLevel * 100) + "%";
-
-}
+zoomLevel + "%";
 
 });
 
-// BOTÃO -
-
 document.getElementById('zoomOut')
-.addEventListener('click', () => {
+.addEventListener('click',()=>{
 
-if(zoomLevel > 0.8){
-
-zoomLevel -= 0.1;
+zoomLevel -= 10;
 
 document.body.style.zoom =
-(zoomLevel * 100) + "%";
-
-}
+zoomLevel + "%";
 
 });
 
@@ -237,7 +217,11 @@ const temp = Math.round(data.main.temp);
 // CLIMA PRINCIPAL
 // ==========================================
 
-document.getElementById('alertaClima').innerHTML = `
+const alerta = document.getElementById('alertaClima');
+
+if(alerta){
+
+alerta.innerHTML =
 
 <h3>🌦️ ${data.name}</h3>
 
@@ -336,7 +320,12 @@ mostrarClimaPadrao();
 
 function mostrarClimaPadrao(){
 
-document.querySelector('.weather-box').innerHTML = `
+const climaBox =
+document.querySelector('.weather-box');
+
+if(!climaBox) return;
+
+climaBox.innerHTML = `
 
 <h3>🌦️ Guarapuava</h3>
 
