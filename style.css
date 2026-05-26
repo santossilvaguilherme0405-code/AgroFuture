@@ -19,12 +19,29 @@ BODY
 =============================== */
 
 body{
+
 font-family:'Poppins',sans-serif;
+
 background:#07140b;
+
 color:white;
-overflow:hidden;
+
+overflow-x:hidden;
+
 overflow-y:auto;
+
 transition:0.4s;
+
+width:100%;
+
+min-height:100vh;
+
+font-size:100%;
+
+transform:none !important;
+
+zoom:100% !important;
+
 }
 
 /* ===============================
@@ -1782,5 +1799,15 @@ nav{
 flex-wrap:wrap;
 justify-content:center;
 }
+
+}
+
+html{
+
+zoom:100% !important;
+
+transform:none !important;
+
+font-size:100% !important;
 
 }
