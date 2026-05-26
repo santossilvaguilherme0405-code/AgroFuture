@@ -69,39 +69,6 @@ document.body.classList.toggle('light-mode');
 
 });
 
-
-// ==========================================
-// ZOOM 
-// ==========================================
-
-let zoomLevel = 100;
-
-window.addEventListener('load',()=>{
-
-document.body.style.zoom = "100%";
-
-});
-
-document.getElementById('zoomIn')
-.addEventListener('click',()=>{
-
-zoomLevel += 10;
-
-document.body.style.zoom =
-zoomLevel + "%";
-
-});
-
-document.getElementById('zoomOut')
-.addEventListener('click',()=>{
-
-zoomLevel -= 10;
-
-document.body.style.zoom =
-zoomLevel + "%";
-
-});
-
 // ==========================================
 // MODAL DAS TECNOLOGIAS
 // ==========================================
@@ -1122,16 +1089,3 @@ sugestoes.appendChild(item);
 
 });
 
-// ==========================================
-// RESETAR ZOOM AUTOMATICAMENTE
-// ==========================================
-
-window.onload = () => {
-
-document.body.style.zoom = "100%";
-
-document.body.style.transform = "scale(1)";
-
-document.body.style.transformOrigin = "top left";
-
-};
