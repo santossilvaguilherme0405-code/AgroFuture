@@ -1857,23 +1857,6 @@ justify-content:center;
 
 }
 
-@media(max-width:900px){
-
-.ia-grid{
-grid-template-columns:1fr;
-}
-
-.help-grid{
-grid-template-columns:1fr;
-}
-
-nav{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-}
-
 html{
 
 font-size:100% !important;
