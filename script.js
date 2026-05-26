@@ -65,45 +65,34 @@ document.body.classList.toggle('light-mode');
 
 
 // ==========================================
-// ZOOM SEGURO
+// ZOOM SIMPLES
 // ==========================================
 
-let zoomAtual = 1;
+let tamanhoFonte = 100;
 
-// RESETAR AO ABRIR
-window.addEventListener('load',()=>{
-
-zoomAtual = 1;
-
-document.documentElement.style.fontSize = '100%';
-
-});
-
-// ZOOM +
 document.getElementById('zoomIn')
 .addEventListener('click',()=>{
 
-if(zoomAtual < 1.3){
+if(tamanhoFonte < 130){
 
-zoomAtual += 0.1;
+tamanhoFonte += 10;
 
 document.documentElement.style.fontSize =
-(zoomAtual * 100) + '%';
+tamanhoFonte + '%';
 
 }
 
 });
 
-// ZOOM -
 document.getElementById('zoomOut')
 .addEventListener('click',()=>{
 
-if(zoomAtual > 0.8){
+if(tamanhoFonte > 90){
 
-zoomAtual -= 0.1;
+tamanhoFonte -= 10;
 
 document.documentElement.style.fontSize =
-(zoomAtual * 100) + '%';
+tamanhoFonte + '%';
 
 }
 
