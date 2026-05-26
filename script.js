@@ -64,6 +64,58 @@ document.body.classList.toggle('light-mode');
 });
 
 // ==========================================
+// ZOOM FUNCIONAL FIREFOX + CHROME
+// ==========================================
+
+let zoomLevel = 1;
+
+const siteContent =
+document.getElementById('site-content');
+
+const zoomInBtn =
+document.getElementById('zoomIn');
+
+const zoomOutBtn =
+document.getElementById('zoomOut');
+
+function atualizarZoom(){
+
+siteContent.style.transform =
+`scale(${zoomLevel})`;
+
+siteContent.style.transformOrigin =
+'top center';
+
+siteContent.style.width =
+`${100 / zoomLevel}%`;
+
+}
+
+zoomInBtn.addEventListener('click',()=>{
+
+zoomLevel += 0.1;
+
+if(zoomLevel > 1.5){
+zoomLevel = 1.5;
+}
+
+atualizarZoom();
+
+});
+
+zoomOutBtn.addEventListener('click',()=>{
+
+zoomLevel -= 0.1;
+
+if(zoomLevel < 0.8){
+zoomLevel = 0.8;
+}
+
+atualizarZoom();
+
+});
+
+// ==========================================
 // MODAL DAS TECNOLOGIAS
 // ==========================================
 
