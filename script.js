@@ -1136,3 +1136,17 @@ sugestoes.appendChild(item);
 });
 
 });
+
+// ==========================================
+// RESETAR ZOOM AUTOMATICAMENTE
+// ==========================================
+
+window.onload = () => {
+
+document.body.style.zoom = "100%";
+
+document.body.style.transform = "scale(1)";
+
+document.body.style.transformOrigin = "top left";
+
+};
