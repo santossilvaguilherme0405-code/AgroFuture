@@ -1,6 +1,6 @@
 window.addEventListener('load',()=>{
 
-document.body.style.zoom = '200%';
+document.body.style.zoom = '100%';
 
 document.body.style.transform = 'none';
 
@@ -78,7 +78,7 @@ document.body.classList.toggle('light-mode');
 // ZOOM SIMPLES
 // ==========================================
 
-let tamanhoFonte = 100;
+let tamanhoFonte = 100%;
 
 document.getElementById('zoomIn')
 .addEventListener('click',()=>{
