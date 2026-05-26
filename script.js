@@ -1,9 +1,3 @@
-window.addEventListener('load',()=>{
-
-document.body.style.zoom = '100%';
-
-});
-
 // ==========================================
 // INICIALIZAÇÃO DO VLibras
 // ==========================================
