@@ -1872,3 +1872,19 @@ body{
     width: 100%;
     overflow-x: hidden;
 }
+
+#site-content{
+
+width:100%;
+
+transition:transform 0.3s ease;
+
+transform-origin:top center;
+
+}
+
+body{
+
+overflow-x:hidden;
+
+}
