@@ -78,7 +78,7 @@ document.body.classList.toggle('light-mode');
 // ZOOM SIMPLES
 // ==========================================
 
-let tamanhoFonte = 100%;
+let tamanhoFonte = 100;
 
 document.getElementById('zoomIn')
 .addEventListener('click',()=>{
