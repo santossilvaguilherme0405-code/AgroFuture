@@ -2,507 +2,160 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-    <!-- Configurações básicas do site -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte - Futuro Sustentável</title>
 
-    <!-- Título da página -->
-    <title>Agro Forte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Arquivo CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Fonte Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Biblioteca de partículas -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
 <body>
 
-    <!-- Modal da Central de Ajuda -->
-    <div class="modal" id="helpModal">
-
-        <div class="modal-content">
-
-            <!-- Botão de fechar -->
-            <span class="close" onclick="fecharAjuda()">
-                &times;
-            </span>
-
-            <h2>📞 Central de Ajuda Agro</h2>
-
-            <p>
-                🌦️ Monitore o clima diariamente.<br><br>
-
-                💧 Utilize irrigação inteligente.<br><br>
-
-                🌱 Preserve o solo e os recursos naturais.<br><br>
-
-                🚁 Use tecnologias sustentáveis no campo.<br><br>
-
-                ☀️ Invista em energia limpa e produção consciente.
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- Tela inicial -->
-    <div id="intro-screen">
-
-        <div class="intro-content">
-
-            <h1>🌱 AgroFuture</h1>
-
-            <p>
-                Tecnologia, sustentabilidade e inovação para o futuro do campo.
-            </p>
-
-            <button onclick="entrarSite()">
-                Entrar no Site
-            </button>
-
-        </div>
-
-    </div>
-
-    <!-- Conteúdo principal -->
-    <div id="site-content">
-
-        <!-- Fundo com partículas -->
-        <div id="particles-js"></div>
-
-        <!-- Cabeçalho -->
-        <header>
-
-            <nav>
-
-                <div class="logo">🌱 AgroFuture</div>
-
-                <!-- Menu -->
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#tecnologias">Tecnologias</a></li>
-                    <li><a href="#mapa">Clima</a></li>
-                    <li><a href="#diagnostico">Diagnóstico</a></li>
-                </ul>
-
-                <!-- Botões -->
-<div class="buttons-nav">
-
-<button id="themeBtn">🌙</button>
-
-<button id="zoomIn">A+</button>
-
-<button id="zoomOut">A-</button>
-
-</div>
-
-            </nav>
-
-        </header>
-
-        <!-- Banner principal -->
-        <section class="hero" id="inicio">
-
-            <div class="hero-content">
-
-                <h1>
-                    AGRO FORTE <br>
-                    FUTURO SUSTENTÁVEL
-                </h1>
-
-                <p>
-                    Equilíbrio entre produção agrícola, tecnologia e preservação ambiental.
-                </p>
-
-                <a href="#tecnologias" class="btn">
-                    Explorar o Futuro
-                </a>
-
-            </div>
-
-        </section>
-
-<!-- ====================================== -->
-<!-- DIAGNÓSTICO AGRÍCOLA -->
-<!-- ====================================== -->
-
-<section class="diagnostico-section hidden" id="diagnostico">
-
-    <h2 class="title">
-        🌾 Diagnóstico Inteligente Agrícola
-    </h2>
-
-    <p class="diagnostico-texto">
-
-        Descubra os melhores tipos de cultivo para sua região,
-        clima e produção rural.
-
-    </p>
-
-    <div class="diagnostico-box">
-
-        <!-- Busca -->
-        <div class="busca-cidade">
-
-    <label>
-        📍 Digite sua cidade do Paraná
-    </label>
-
-    <input
-        type="text"
-        id="cidadeInput"
-        placeholder="Ex: Guarapuava"
-        autocomplete="off">
-
-    <div id="sugestoesCidade"></div>
-
-</div>
-
-<div class="filtros-agro">
-
-    <div class="filtro-box">
-
-        <label>
-            🚜 Porte da Produção
-        </label>
-
-        <label for="porte">
-    Tipo de propriedade rural
-</label>
-
-<select id="porte">
-
-    <option value="">
-        Selecione
-    </option>
-
-    <option value="pequeno">
-        Pequeno Porte
-    </option>
-
-    <option value="medio">
-        Médio Porte
-    </option>
-
-    <option value="grande">
-        Grande Porte
-    </option>
-
-</select>
-
-    </div>
-
-    <div class="filtro-box">
-
-        <label>
-            🌱 Tamanho da Área
-        </label>
-
-        <input
-            type="number"
-            id="area"
-            placeholder="Ex: 15">
-
-        <small>
-            Área em hectares
-        </small>
-
-    </div>
-
-</div>
-
-<button
-    class="btn-agro"
-    onclick="analisarCidade()">
-
-    🔍 Analisar Região
-
-</button>
-
-<!-- Resultado -->
-<div id="resultadoCultivos" class="resultado-cultivos">
-
-    <div class="cultivo-card">
-
-        <h3>🌱 Faça uma pesquisa</h3>
-
-        <p>
-            Digite sua cidade para descobrir os melhores cultivos agrícolas da sua região.
-        </p>
-
+    <div class="modal" id="helpModal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharAjuda()">&times;</span>
+            <h2>📞 Central de Ajuda Agro</h2>
+            <p>
+                &🌦️ Monitore o clima diariamente.<br><br>
+                💧 Utilize irrigação inteligente.<br><br>
+                🌱 Preserve o solo e os recursos naturais.<br><br>
+                🚁 Use tecnologias sustentáveis no campo.<br><br>
+                ☀️ Invista em energia limpa e produção consciente.
+            </p>
+        </div>
     </div>
 
-</div>
-
-</section>
-
-        <!-- Central Educacional -->
-        <section class="ia-section hidden">
-
-            <h2 class="title">🌱 Central Educacional Agro</h2>
-
-            <div class="ia-grid">
-
-                <button onclick="mostrarInfo('agua')">
-                    💧 Economia de Água
-                </button>
-
-                <button onclick="mostrarInfo('energia')">
-                    ☀️ Energia Solar
-                </button>
-
-                <button onclick="mostrarInfo('drones')">
-                    🚁 Drones Agrícolas
-                </button>
-
-                <button onclick="mostrarInfo('solo')">
-                    🌱 Preservação do Solo
-                </button>
-
-                <button onclick="mostrarInfo('clima')">
-                    🌦️ Mudanças Climáticas
-                </button>
-
-                <button onclick="mostrarInfo('sustentabilidade')">
-                    🌎 Sustentabilidade
-                </button>
-
-                <button onclick="mostrarInfo('geada')">
-                    ❄️ Alertas de Geada
-                </button>
-
-                <button onclick="mostrarInfo('chuva')">
-                    🌧️ Chuvas Intensas
-                </button>
-
-                <button onclick="mostrarInfo('pragas')">
-                    🐛 Controle de Pragas
-                </button>
-
-                <button onclick="mostrarInfo('economia')">
-                    💰 Economia Rural
-                </button>
-
-                <button onclick="mostrarInfo('sensores')">
-                    📡 Sensores Inteligentes
-                </button>
-
-                <button onclick="mostrarInfo('carbono')">
-                    🌳 Redução de Carbono
-                </button>
-
-            </div>
-
-            <!-- Área de resposta -->
-            <div class="ia-resposta" id="respostaIA">
-
-                Clique em um tema acima para aprender mais sobre agricultura sustentável.
-
-            </div>
-
-        </section>
-
-        <!-- Clima agrícola -->
-        <section class="map-section hidden" id="mapa">
-
-            <h2 class="title">🌦️ Clima Agrícola em Tempo Real</h2>
-
-            <div class="climate-map">
-
-                <!-- Imagem de fundo -->
-                <img
-                    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop"
-                    alt="Mapa climático">
-
-                <!-- Informações do clima -->
-                <div class="map-overlay">
-
-                    <div class="climate-card">
-
-                        🌡️ Temperatura
-                        <br>
-
-                        <b id="tempMapa">18°C</b>
-
-                    </div>
-
-                    <div class="climate-card">
-
-                        🌦️ Clima
-                        <br>
-
-                        <b id="climaMapa">Limpo</b>
-
-                    </div>
-
-                    <div class="climate-card">
-
-                        💧 Umidade
-                        <br>
-
-                        <b id="umidadeMapa">82%</b>
-
-                    </div>
-
-                    <div class="climate-card">
-
-                        🌬️ Ventos
-                        <br>
-
-                        <b id="ventoMapa">9 km/h</b>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Modal das tecnologias -->
-        <div class="modal" id="modal">
-
-            <div class="modal-content">
-
-                <span class="close" onclick="closeModal()">
-                    &times;
-                </span>
-
-                <h2 id="modalTitle"></h2>
-
-                <p id="modalText"></p>
-
-            </div>
-
-        </div>
-
-        <!-- Central de ajuda -->
-        <section class="help-section hidden">
-
-            <h2 class="title">📞 Central de Ajuda Agro</h2>
-
-            <div class="help-grid">
-
-                <!-- Simepar -->
-                <div class="help-card">
-
-                    <h3>📡 Simepar Paraná</h3>
-
-                    <p>
-                        Acompanhe previsões meteorológicas, alertas climáticos e informações oficiais do tempo no Paraná através do Simepar.
-                    </p>
-
-                    <a
-                        href="https://www.simepar.br"
-                        target="_blank"
-                        class="btn">
-
-                        Acessar Simepar
-
-                    </a>
-
-                </div>
-
-                <!-- Card -->
-                <div class="help-card">
-
-                    <h3>🌦️ Clima e Previsão</h3>
-
-                    <p>
-                        Acompanhe mudanças climáticas e informações importantes para proteger plantações e melhorar a produção agrícola.
-                    </p>
-
-                </div>
-
-                <!-- Card -->
-                <div class="help-card">
-
-                    <h3>💧 Economia de Água</h3>
-
-                    <p>
-                        Aprenda técnicas sustentáveis para reduzir desperdícios e preservar recursos hídricos no campo.
-                    </p>
-
-                </div>
-
-                <!-- Card -->
-                <div class="help-card">
-
-                    <h3>🌱 Sustentabilidade</h3>
-
-                    <p>
-                        Descubra práticas agrícolas sustentáveis que ajudam a proteger o meio ambiente e aumentar produtividade.
-                    </p>
-
-                </div>
-
-                <!-- Card -->
-                <div class="help-card">
-
-                    <h3>🚁 Tecnologia no Campo</h3>
-
-                    <p>
-                        Conheça tecnologias modernas como drones, sensores e monitoramento inteligente aplicados no agronegócio.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- Área de suporte -->
-            <div class="help-contact">
-
-                <h3>📍 Suporte Rural</h3>
-
-                <p>
-                    Em caso de emergências climáticas ou dúvidas agrícolas, procure órgãos ambientais e assistência técnica da sua região.
-                </p>
-
-                <button onclick="abrirAjuda()">
-                    Abrir Central
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- Rodapé -->
-        <footer>
-
-            <h2>🌱 Agro Forte - Futuro Sustentável</h2>
-
-        </footer>
-
-    </div>
-
-    <!-- VLibras -->
-    <div vw class="enabled">
-
-        <div vw-access-button class="active"></div>
-
-        <div vw-plugin-wrapper>
-
-            <div class="vw-plugin-top-wrapper"></div>
-
-        </div>
-
-    </div>
-
-    <!-- Script do VLibras -->
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
-    <!-- Arquivo JS -->
-    <script defer src="script.js"></script>
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1>🌱 AgroFuture</h1>
+            <p>Tecnologia, sustentabilidade e inovação para o futuro do campo.</p>
+            <button onclick="entrarSite()">Entrar no Site</button>
+        </div>
+    </div>
+
+    <div id="site-content">
+        <div id="particles-js"></div>
+
+        <header>
+            <nav>
+                <div class="logo">🌱 AgroFuture</div>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#mapa">Clima</a></li>
+                    <li><a href="#diagnostico">Diagnóstico</a></li>
+                </ul>
+
+                <div class="buttons-nav">
+                    <button id="themeBtn">🌙</button>
+                    <button id="zoomIn">A+</button>
+                    <button id="zoomOut">A-</button>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>AGRO FORTE <br> FUTURO SUSTENTÁVEL</h1>
+                <p>Equilíbrio entre produção agrícola, tecnologia e preservação ambiental.</p>
+                <a href="#tecnologias" class="btn">Explorar o Futuro</a>
+            </div>
+        </section>
+
+        <section class="diagnostico-section hidden" id="diagnostico">
+            <h2 class="title">🌾 Diagnóstico Inteligente Agrícola</h2>
+            <p class="diagnostico-texto">Descubra os melhores tipos de cultivo para sua região.</p>
+
+            <div class="diagnostico-box">
+                <div class="busca-cidade">
+                    <label>📍 Digite sua cidade do Paraná</label>
+                    <input type="text" id="cidadeInput" placeholder="Ex: Guarapuava" autocomplete="off">
+                    <div id="sugestoesCidade"></div>
+                </div>
+
+                <div class="filtros-agro">
+                    <div class="filtro-box">
+                        <label>🚜 Porte da Produção</label>
+                        <select id="porte">
+                            <option value="">Selecione</option>
+                            <option value="pequeno">Pequeno Porte</option>
+                            <option value="medio">Médio Porte</option>
+                            <option value="grande">Grande Porte</option>
+                        </select>
+                    </div>
+                    <div class="filtro-box">
+                        <label>🌱 Tamanho da Área</label>
+                        <input type="number" id="area" placeholder="Ex: 15">
+                        <small>Área em hectares</small>
+                    </div>
+                </div>
+
+                <button class="btn-agro" onclick="analisarCidade()">🔍 Analisar Região</button>
+
+                <div id="resultadoCultivos" class="resultado-cultivos">
+                    <div class="cultivo-card">
+                        <h3>🌱 Faça uma pesquisa</h3>
+                        <p>Digite sua cidade para descobrir os melhores cultivos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ia-section hidden">
+            <h2 class="title">🌱 Central Educacional Agro</h2>
+            <div class="ia-grid">
+                <button onclick="mostrarInfo('agua')">💧 Economia de Água</button>
+                <button onclick="mostrarInfo('energia')">☀️ Energia Solar</button>
+                <button onclick="mostrarInfo('drones')">🚁 Drones Agrícolas</button>
+                <button onclick="mostrarInfo('solo')">🌱 Preservação do Solo</button>
+                <button onclick="mostrarInfo('clima')">🌦️ Mudanças Climáticas</button>
+                <button onclick="mostrarInfo('sustentabilidade')">🌎 Sustentabilidade</button>
+                <button onclick="mostrarInfo('geada')">❄️ Alertas de Geada</button>
+                <button onclick="mostrarInfo('chuva')">🌧️ Chuvas Intensas</button>
+                <button onclick="mostrarInfo('pragas')">🐛 Controle de Pragas</button>
+                <button onclick="mostrarInfo('economia')">💰 Economia Rural</button>
+                <button onclick="mostrarInfo('sensores')">📡 Sensores Inteligentes</button>
+                <button onclick="mostrarInfo('carbono')">🌳 Redução de Carbono</button>
+            </div>
+            <div class="ia-resposta" id="respostaIA">
+                Clique em um tema acima para aprender mais.
+            </div>
+        </section>
+
+        <section class="map-section hidden" id="mapa">
+            <h2 class="title">🌦️ Clima Agrícola em Tempo Real</h2>
+            <div class="climate-map">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop" alt="Mapa">
+                <div class="map-overlay">
+                    <div class="climate-card">🌡️ Temp <br> <b id="tempMapa">18°C</b></div>
+                    <div class="climate-card">🌦️ Clima <br> <b id="climaMapa">Limpo</b></div>
+                    <div class="climate-card">💧 Umid <br> <b id="umidadeMapa">82%</b></div>
+                    <div class="climate-card">🌬️ Vento <br> <b id="ventoMapa">9 km/h</b></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h2>🌱 Agro Forte - Futuro Sustentável</h2>
+        </footer>
+    </div>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script defer src="script.js"></script>
 
 </body>
-
-</html> 
+</html>
