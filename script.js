@@ -75,34 +75,52 @@ document.body.classList.toggle('light-mode');
 
 
 // ==========================================
-// ZOOM SIMPLES
+// ZOOM DA PÁGINA
 // ==========================================
 
-let tamanhoFonte = 100;
+let zoomLevel = 1;
+
+// RESETA O ZOOM SEMPRE QUE ENTRA
+
+document.body.style.zoom = "100%";
+
+window.addEventListener('load', () => {
+
+zoomLevel = 1;
+
+document.body.style.zoom = "100%";
+
+document.body.style.transform = "none";
+
+});
+
+// BOTÃO +
 
 document.getElementById('zoomIn')
-.addEventListener('click',()=>{
+.addEventListener('click', () => {
 
-if(tamanhoFonte < 130){
+if(zoomLevel < 1.3){
 
-tamanhoFonte += 10;
+zoomLevel += 0.1;
 
-document.documentElement.style.fontSize =
-tamanhoFonte + '%';
+document.body.style.zoom =
+(zoomLevel * 100) + "%";
 
 }
 
 });
 
+// BOTÃO -
+
 document.getElementById('zoomOut')
-.addEventListener('click',()=>{
+.addEventListener('click', () => {
 
-if(tamanhoFonte > 90){
+if(zoomLevel > 0.8){
 
-tamanhoFonte -= 10;
+zoomLevel -= 0.1;
 
-document.documentElement.style.fontSize =
-tamanhoFonte + '%';
+document.body.style.zoom =
+(zoomLevel * 100) + "%";
 
 }
 
