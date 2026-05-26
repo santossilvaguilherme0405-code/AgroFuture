@@ -1,6 +1,6 @@
 window.addEventListener('load',()=>{
 
-document.body.style.zoom = '100%';
+document.body.style.zoom = '200%';
 
 document.body.style.transform = 'none';
 
