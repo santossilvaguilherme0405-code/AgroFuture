@@ -1089,3 +1089,40 @@ sugestoes.appendChild(item);
 
 });
 
+// ==========================================
+// ZOOM FUNCIONAL
+// ==========================================
+
+let zoomLevel = 1;
+
+const site = document.getElementById('site-content');
+
+document.getElementById('zoomIn')
+.addEventListener('click', () => {
+
+zoomLevel += 0.1;
+
+if(zoomLevel > 1.5){
+zoomLevel = 1.5;
+}
+
+site.style.transform = `scale(${zoomLevel})`;
+
+site.style.transformOrigin = 'top center';
+
+});
+
+document.getElementById('zoomOut')
+.addEventListener('click', () => {
+
+zoomLevel -= 0.1;
+
+if(zoomLevel < 0.8){
+zoomLevel = 0.8;
+}
+
+site.style.transform = `scale(${zoomLevel})`;
+
+site.style.transformOrigin = 'top center';
+
+});
