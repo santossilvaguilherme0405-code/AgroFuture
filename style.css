@@ -1178,3 +1178,24 @@ footer {
     .contadores-grid { grid-template-columns: repeat(2, 1fr); }
     .contador-numero { font-size: 2rem; }
 }
+/*melhorias na central de ajuda*/
+
+.modal-content {
+    background: #07140b;
+    margin: 5vh auto;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 1.5625rem;
+    border: 2px solid #00ff88;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+        max-height: 90vh;
+    }
+}
