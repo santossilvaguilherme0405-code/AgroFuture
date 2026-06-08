@@ -1085,18 +1085,3 @@ document.getElementById('comentarioTexto').addEventListener('keydown', (e) => {
         btnEnviar.click();
     }
 });
-
-function abrirAjuda() {
-    document.getElementById('helpModal').style.display = 'block';
-
-    // mantém botão acessível acima da central
-    const btn = document.getElementById('accessibilityBtn');
-    if (btn) btn.style.zIndex = '6001';
-}
-
-function fecharAjuda() {
-    document.getElementById('helpModal').style.display = 'none';
-
-    const btn = document.getElementById('accessibilityBtn');
-    if (btn) btn.style.zIndex = '3000';
-}
