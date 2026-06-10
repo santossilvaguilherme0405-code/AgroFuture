@@ -1217,3 +1217,20 @@ footer {
         max-height: 90vh;
     }
 }
+.footer-dev {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00ff88;
+    margin-top: 1rem;
+}
+
+.footer-school {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.light-mode .footer-school {
+    color: rgba(0,0,0,0.7);
+}
