@@ -91,7 +91,7 @@ HERO
     text-align:center; padding:7.5rem 1.25rem;
     background:
         linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+        url('./Imagens/ImgAbertura.jpg');
     background-size:cover; background-position:center;
 }
 .hero-content h1 {
