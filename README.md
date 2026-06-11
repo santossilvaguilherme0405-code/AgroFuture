@@ -43,14 +43,9 @@ Nenhuma instalação necessária. O projeto roda diretamente no navegador.
 ### Executando localmente
 
 ```bash
-# Clone ou baixe o projeto
-git clone https://github.com/seu-usuario/agrofuture.git
 
-# Acesse a pasta
-cd agrofuture
+https://santossilvaguilherme0405-code.github.io/100/
 
-# Abra o arquivo principal no navegador
-# (duplo clique em index.html, ou use uma extensão como Live Server no VS Code)
 ```
 
 > **Dica:** Para que a geolocalização e a API de clima funcionem corretamente, use um servidor local (ex: extensão **Live Server** do VS Code) em vez de abrir o arquivo diretamente.
