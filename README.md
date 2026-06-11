@@ -60,12 +60,14 @@ cd agrofuture
 ## 📁 Estrutura de Arquivos
 
 ```
+
 agrofuture/
-├── index.html        # Estrutura principal da página
-├── style.css         # Estilos, responsividade e temas
-├── script.js         # Lógica, diagnóstico, clima e acessibilidade
-└── Imagens/
-    └── ImgAbertura.jpg   # Imagem de fundo da seção hero
+Imagens/
+ImgAbertura.jpg   # Imagem de fundo da seção hero
+index.html        # Estrutura principal da página
+style.css         # Estilos, responsividade e temas
+script.js         # Lógica, diagnóstico, clima e acessibilidade
+
 ```
 
 ---
