@@ -346,6 +346,45 @@ function mostrarInfo(tipo) {
         economia: ['💰 Economia Rural','A gestão financeira rural profissional inclui custo de produção por hectare, fluxo de caixa sazonal e análise de margem de contribuição por cultura. Cooperativas oferecem melhores preços de insumos e acesso a mercados. O Pronaf e linhas de crédito do Banco do Brasil e Sicredi financiam equipamentos e custeio com juros subsidiados. Diversificar receitas com agroindústria familiar reduz dependência de commodities.'],
         sensores: ['📡 Sensores Inteligentes','Sensores de solo medem temperatura, umidade e condutividade elétrica em profundidade, gerando dados para irrigação de precisão. Estações meteorológicas automáticas na propriedade fornecem dados locais mais precisos que a previsão regional. Integrados a aplicativos e plataformas de agricultura de precisão, os sensores permitem tomada de decisão baseada em dados reais da lavoura.'],
         carbono: ['🌳 Redução de Carbono','O sequestro de carbono pelo solo é potencializado pelo plantio direto e sistemas agroflorestais. O mercado de carbono permite que produtores rurais gerem créditos de carbono certificados e obtenham renda adicional. Práticas como a integração lavoura-pecuária-floresta (ILPF) combinam produtividade e fixação de CO₂. O Plano ABC+ do governo federal incentiva essas práticas com crédito diferenciado.']
+    irrigacao: {
+titulo: "💦 Irrigação Inteligente",
+texto: "A irrigação inteligente utiliza sensores e dados climáticos para fornecer água na quantidade certa. Isso reduz desperdícios, melhora o crescimento das plantas e aumenta a produtividade."
+},
+
+fertilidade: {
+titulo: "🌾 Fertilidade do Solo",
+texto: "Manter a fertilidade do solo é essencial para boas colheitas. O uso correto de nutrientes, matéria orgânica e rotação de culturas ajuda a preservar a qualidade da terra."
+},
+
+reflorestamento: {
+titulo: "🌳 Reflorestamento",
+texto: "O reflorestamento protege nascentes, reduz a erosão e contribui para o equilíbrio ambiental. Áreas reflorestadas ajudam a conservar a biodiversidade e melhorar o clima local."
+},
+
+agriculturaDigital: {
+titulo: "📱 Agricultura Digital",
+texto: "A agricultura digital utiliza aplicativos, sensores e inteligência artificial para auxiliar o produtor na tomada de decisões mais rápidas e eficientes."
+},
+
+cooperativas: {
+titulo: "🤝 Cooperativas Rurais",
+texto: "As cooperativas permitem que produtores rurais trabalhem juntos para obter melhores preços, acesso a tecnologias e oportunidades de comercialização."
+},
+
+bioinsumos: {
+titulo: "🧪 Bioinsumos",
+texto: "Bioinsumos são produtos de origem biológica utilizados para melhorar a produtividade agrícola de forma sustentável, reduzindo a dependência de produtos químicos."
+},
+
+agroecologia: {
+titulo: "🌿 Agroecologia",
+texto: "A agroecologia combina produção agrícola com preservação ambiental, promovendo sistemas mais sustentáveis e equilibrados para o campo."
+},
+
+maquinas: {
+titulo: "🚜 Máquinas Agrícolas",
+texto: "Máquinas modernas aumentam a eficiência do trabalho rural, reduzem custos operacionais e permitem maior precisão no plantio e na colheita."
+}
     };
     const item = conteudos[tipo];
     if (!item) return;
