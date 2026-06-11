@@ -87,7 +87,7 @@ agrofuture/
 O projeto usa a API gratuita do OpenWeatherMap. A chave atual está definida em `script.js`:
 
 ```javascript
-const apiKey = 'SUA_CHAVE_AQUI';
+const apiKey = 3924a0c6fd1f4f713a1f3b29f8f32da8;
 ```
 
 Para usar sua própria chave:
