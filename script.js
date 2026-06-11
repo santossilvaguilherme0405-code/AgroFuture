@@ -1069,3 +1069,13 @@ document.getElementById('comentarioTexto').addEventListener('keydown', (e) => {
         btnEnviar.click();
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("hamburgerBtn");
+
+    if(btn){
+        btn.addEventListener("click", () => {
+            alert("Botão funcionando!");
+        });
+    }
+});
