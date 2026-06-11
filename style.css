@@ -1,11 +1,8 @@
-/* ===============================
-RESET
-=============================== */
+/* RESET */
+
 * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
 
-/* ===============================
-BODY — zoom via font-size no html
-=============================== */
+/*BODY — zoom via font-size no html */
 html { font-size: 16px; }
 
 body {
@@ -16,18 +13,14 @@ body {
     transition: background 0.4s, color 0.4s;
 }
 
-/* ===============================
-PARTÍCULAS
-=============================== */
+/* PARTÍCULAS */
 #particles-js {
     position:fixed; top:0; left:0;
     width:100%; height:100%;
     z-index:-2; pointer-events:none;
 }
 
-/* ===============================
-HEADER
-=============================== */
+/* HEADER */
 header {
     position:fixed; width:100%; top:0; z-index:1000;
     background:rgba(0,0,0,0.3);
@@ -74,17 +67,15 @@ nav {
 /* Hambúrguer — escondido em desktop */
 .hamburger { display:none; }
 
-/* ===============================
-ZOOM CONTAINER — reflow via font-size (natural reflow)
-=============================== */
+/* ZOOM CONTAINER — reflow via font-size (natural reflow) */
+
 #zoom-container {
     width: 100%;
     /* zoom is applied via html font-size, everything uses rem so it reflows */
 }
 
-/* ===============================
-HERO
-=============================== */
+/* HERO */
+
 .hero {
     min-height:100vh;
     display:flex; justify-content:center; align-items:center;
@@ -101,9 +92,8 @@ HERO
 }
 .hero-content p { font-size:clamp(1rem, 2vw, 1.375rem); margin-bottom:1.875rem; color:white; }
 
-/* ===============================
-BOTÃO
-=============================== */
+/* BOTÃO */
+
 .btn {
     display:inline-block; padding:1.125rem 2.1875rem; border-radius:3.125rem;
     background:linear-gradient(45deg,#00ff88,#00c853);
@@ -111,21 +101,18 @@ BOTÃO
 }
 .btn:hover { transform:scale(1.05); }
 
-/* ===============================
-TITLE GERAL
-=============================== */
+/* TITLE GERAL */
+
 .title { text-align:center; font-size:clamp(1.8rem, 4vw, 3.125rem); margin-bottom:3.75rem; }
 
-/* ===============================
-SEÇÕES
-=============================== */
+/* SEÇÕES */
+
 .map-section, .ia-section, .help-section {
     padding:6.25rem 5%; position:relative; z-index:1;
 }
 
-/* ===============================
-MAPA
-=============================== */
+/* MAPA */
+
 .climate-map {
     position:relative; border-radius:1.875rem; overflow:hidden;
     box-shadow:0 0 2.5rem rgba(0,255,136,0.15);
@@ -147,9 +134,8 @@ MAPA
 .climate-card:hover { transform:translateY(-0.625rem); box-shadow:0 0 1.5625rem rgba(0,255,136,0.5); }
 .climate-card b { font-size:2.1875rem; color:#00ff88; }
 
-/* ===============================
-CENTRAL EDUCACIONAL
-=============================== */
+/* CENTRAL EDUCACIONAL */
+
 .ia-section { text-align:center; }
 .ia-grid {
     display:grid;
@@ -170,9 +156,8 @@ CENTRAL EDUCACIONAL
 }
 .ia-resposta h3 { font-size:2.1875rem; margin-bottom:1.25rem; color:#00ff88; }
 
-/* ===============================
-MODAL
-=============================== */
+/* MODAL */
+
 .modal {
     display: none;
     position: fixed;
@@ -201,9 +186,8 @@ MODAL
     overflow: visible;
 }
 
-/* ===============================
-CENTRAL DE AJUDA
-=============================== */
+/* CENTRAL DE AJUDA */
+
 .help-section { padding:6.25rem 5%; }
 .help-grid {
     display:grid; grid-template-columns:repeat(auto-fit, minmax(16.25rem, 1fr));
@@ -226,14 +210,12 @@ CENTRAL DE AJUDA
 }
 .help-contact button:hover { transform:scale(1.05); }
 
-/* ===============================
-FOOTER
-=============================== */
+/* FOOTER */
+
 footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-top:3.125rem; }
 
-/* ===============================
-LIGHT MODE
-=============================== */
+/* LIGHT MODE */
+
 .light-mode { background:#eaf7ee; color:#111; }
 .light-mode header { background:rgba(255,255,255,0.9); }
 .light-mode nav ul li a { color:#111; }
@@ -252,9 +234,8 @@ LIGHT MODE
 }
 .light-mode .diagnostico-box { background:rgba(255,255,255,0.9); color:#111; }
 
-/* ===============================
-ANIMAÇÕES
-=============================== */
+/* ANIMAÇÕES */
+
 .hidden {
     opacity: 0;
     transform: translateY(2rem);
@@ -266,9 +247,8 @@ ANIMAÇÕES
     transform: translateY(0);
 }
 
-/* ===============================
-DIAGNÓSTICO
-=============================== */
+/* DIAGNÓSTICO */
+
 .diagnostico-section {
     padding:7.5rem 5%; text-align:center; position:relative; z-index:1;
 }
@@ -315,9 +295,8 @@ DIAGNÓSTICO
 }
 .btn-agro:hover { transform:translateY(-5px) scale(1.03); box-shadow:0 0 2.1875rem rgba(0,255,136,0.45); }
 
-/* ===============================
-RESULTADO CULTIVOS
-=============================== */
+/* RESULTADO CULTIVOS */
+
 .resultado-cultivos {
     margin-top:2.5rem;
     display:grid; grid-template-columns:repeat(auto-fit, minmax(18.75rem, 1fr));
@@ -376,9 +355,7 @@ RESULTADO CULTIVOS
 .res-card-titulo { font-size:0.9rem; font-weight:700; color:#7CFF88; margin-bottom:0.5rem; }
 .res-card-texto { font-size:0.9375rem; line-height:1.6; }
 
-/* ===============================
-SUGESTÕES DE CIDADES
-=============================== */
+/* SUGESTÕES DE CIDADES */
 #sugestoesCidade {
     width:100%; max-width:31.25rem;
     display:flex; flex-direction:column; gap:0.5rem; margin-top:0.625rem;
@@ -389,18 +366,14 @@ SUGESTÕES DE CIDADES
 }
 .sugestao-item:hover { background:rgba(0,255,136,0.2); transform:translateX(5px); }
 
-/* ===============================
-MENU MOBILE — OVERLAY
-=============================== */
+/* MENU MOBILE — OVERLAY */
 .menu-overlay {
     display:none; position:fixed; inset:0;
     background:rgba(0,0,0,0.6); z-index:1998; opacity:0; transition:0.3s;
 }
 .menu-overlay.open { display:block; opacity:1; }
 
-/* ===============================
-DRAWER MOBILE
-=============================== */
+/* DRAWER MOBILE */
 .mobile-drawer {
     position:fixed; top:0; right:-100%; width:min(80vw, 18rem);
     height:100%; background:#07140b; z-index:1999;
@@ -451,9 +424,7 @@ DRAWER MOBILE
 .hamburger:hover { background:rgba(0,255,136,0.1); }
 
 
-/* ===============================
-CLIMA — STATUS BAR
-=============================== */
+/* CLIMA — STATUS BAR */
 .clima-status {
     text-align:center;
     font-size:0.95rem;
@@ -536,9 +507,7 @@ CLIMA — STATUS BAR
     .clima-extra-grid { grid-template-columns:repeat(2, 1fr); }
 }
 
-/* ===============================
-BOTÃO VOLTAR AO TOPO
-=============================== */
+/* BOTÃO VOLTAR AO TOPO */
 #scrollTopBtn {
     position: fixed;
     bottom: 2rem;
@@ -604,9 +573,7 @@ BOTÃO VOLTAR AO TOPO
     transform: translateY(-2px);
 }
 
-/* ===============================
-RESPONSIVO — TABLET (769px–1024px)
-=============================== */
+/* RESPONSIVO — TABLET (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
 
     nav { padding:1rem 2rem; }
@@ -648,9 +615,7 @@ RESPONSIVO — TABLET (769px–1024px)
     #scrollTopBtn { bottom:1.5rem; right:1.5rem; width:3rem; height:3rem; }
 }
 
-/* ===============================
-RESPONSIVO — MOBILE (≤768px)
-=============================== */
+/* RESPONSIVO — MOBILE (≤768px) */
 @media (max-width: 768px) {
 
     /* Nav */
@@ -722,9 +687,7 @@ RESPONSIVO — MOBILE (≤768px)
     #scrollTopBtn { bottom:1rem; right:1rem; width:2.75rem; height:2.75rem; }
 }
 
-/* ===============================
-CAIXA DE ACESSIBILIDADE FLUTUANTE
-=============================== */
+/* CAIXA DE ACESSIBILIDADE FLUTUANTE */
 .acessibilidade-box {
     position: fixed;
     bottom: 1.5rem;
@@ -870,9 +833,7 @@ CAIXA DE ACESSIBILIDADE FLUTUANTE
     .acess-painel { min-width: 12rem; }
 }
 
-/* ===============================
-ÁREA DE COMENTÁRIOS
-=============================== */
+/* ÁREA DE COMENTÁRIOS */
 .comentarios-section {
     padding: 6.25rem 5%;
     position: relative;
@@ -1026,9 +987,7 @@ CAIXA DE ACESSIBILIDADE FLUTUANTE
     .comentarios-lista { max-height: 24rem; }
 }
 
-/* ===============================
-MENU ATIVO AO ROLAR
-=============================== */
+/* MENU ATIVO AO ROLAR */
 .nav-desktop a {
     position: relative;
     padding-bottom: 0.25rem;
@@ -1056,9 +1015,7 @@ MENU ATIVO AO ROLAR
     width: 100%;
 }
 
-/* ===============================
-SEÇÃO DE CONTADORES
-=============================== */
+/* SEÇÃO DE CONTADORES */
 .contadores-section {
     padding: 4rem 5%;
     position: relative;
@@ -1101,9 +1058,7 @@ SEÇÃO DE CONTADORES
 
 .light-mode .contador-label { color: rgba(0, 0, 0, 0.5); }
 
-/* ===============================
-FOOTER COMPLETO
-=============================== */
+/* FOOTER COMPLETO */
 footer {
     padding: 3.75rem 5%;
     text-align: center;
@@ -1214,6 +1169,7 @@ footer {
     .contadores-grid { grid-template-columns: repeat(2, 1fr); }
     .contador-numero { font-size: 2rem; }
 }
+
 /*melhorias na central de ajuda*/
 
 .modal-content {
