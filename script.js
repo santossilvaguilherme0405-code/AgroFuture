@@ -354,7 +354,6 @@ function mostrarInfo(tipo) {
         bioinsumos: ['🧪 Bioinsumos','Bioinsumos são produtos de origem biológica utilizados para melhorar a produtividade agrícola de forma sustentável, reduzindo a dependência de produtos químicos.'],
         agroecologia: ['🌿 Agroecologia','A agroecologia combina produção agrícola com preservação ambiental, promovendo sistemas mais sustentáveis e equilibrados para o campo.'],
         maquinas: ['🚜 Máquinas Agrícolas','Máquinas modernas aumentam a eficiência do trabalho rural, reduzem custos operacionais e permitem maior precisão no plantio e na colheita.']
-    }
     };
     const item = conteudos[tipo];
     if (!item) return;
