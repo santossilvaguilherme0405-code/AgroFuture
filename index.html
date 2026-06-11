@@ -89,14 +89,14 @@ Para mais informações: <a href="https://www.agricultura.pr.gov.br" target="_bl
             <span class="logo">🌱 AgroFuture</span>
             <button class="drawer-close" id="drawerClose">✕</button>
         </div>
-        <nav class="drawer-nav">
-            <a href="#inicio" class="drawer-link">🏠 Início</a>
-            <a href="#diagnostico" class="drawer-link">🌾 Diagnóstico</a>
-            <a href="#tecnologias" class="drawer-link">🌱 Tecnologias</a>
-            <a href="#mapa" class="drawer-link">🌦️ Clima</a>
-            <a href="#ajuda" class="drawer-link">📞 Ajuda</a>
-            <a href="#comentarios" class="drawer-link">💬 Comentários</a>
-        </nav>
+<nav class="drawer-nav">
+    <a href="#inicio"       data-action="fecharMenu">🏠 Início</a>
+    <a href="#diagnostico"  data-action="fecharMenu">🌾 Diagnóstico</a>
+    <a href="#tecnologias"  data-action="fecharMenu">🌱 Tecnologias</a>
+    <a href="#mapa"         data-action="fecharMenu">🌦️ Clima</a>
+    <a href="#ajuda"        data-action="fecharMenu">📞 Ajuda</a>
+    <a href="#comentarios"  data-action="fecharMenu">💬 Comentários</a>
+</nav>
         <div class="drawer-footer">
             <button id="themeBtnMobile" data-action="tema">🌙 Tema Escuro</button>
         </div>
@@ -130,7 +130,7 @@ Para mais informações: <a href="https://www.agricultura.pr.gov.br" target="_bl
                 </div>
 
                 <!-- Hambúrguer mobile -->
-                <button class="hamburger" id="hamburger" id="hamburgerBtn" aria-label="Abrir menu">
+               <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -431,37 +431,6 @@ Para mais informações: <a href="https://www.agricultura.pr.gov.br" target="_bl
         })();
     </script>
     <script src="script.js"></script>
-
-    <!-- Botão Hambúrguer -->
-<button id="hamburgerBtn" class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
-
-<!-- Overlay -->
-<div id="menuOverlay" class="menu-overlay"></div>
-
-<!-- Menu Mobile -->
-<div id="mobileDrawer" class="mobile-drawer">
-
-    <div class="drawer-header">
-        <div class="logo">🌱 Agro Forte</div>
-
-        <button id="drawerClose" class="drawer-close">
-            ✕
-        </button>
-    </div>
-
-    <nav class="drawer-nav">
-        <a href="#inicio">Início</a>
-        <a href="#diagnostico">Diagnóstico</a>
-        <a href="#clima">Clima</a>
-        <a href="#ajuda">Ajuda</a>
-    </nav>
-
-</div>
-    
 </body>
 </html>
 
