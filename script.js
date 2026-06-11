@@ -1,6 +1,5 @@
-// ==========================================
 // PARTICLES
-// ==========================================
+
 particlesJS('particles-js', {
     particles: {
         number: { value: 60 },
@@ -13,9 +12,8 @@ particlesJS('particles-js', {
     }
 });
 
-// ==========================================
 // TEMA — com persistência em localStorage
-// ==========================================
+
 function alternarTema() {
     document.body.classList.toggle('light-mode');
     const isLight = document.body.classList.contains('light-mode');
@@ -41,9 +39,8 @@ function alternarTema() {
     }
 })();
 
-// ==========================================
 // ZOOM — font-size no html (reflow natural)
-// ==========================================
+
 let baseSize = parseFloat(localStorage.getItem('zoom')) || parseFloat(
     getComputedStyle(document.documentElement).fontSize
 ) || 16;
@@ -67,9 +64,8 @@ function aplicarZoom(delta) {
     if (zoomOut) zoomOut.title = 'Diminuir zoom (' + pct + '%)';
 }
 
-// ==========================================
 // EVENTOS — addEventListener (sem onclick inline)
-// ==========================================
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Botão explorar
@@ -205,9 +201,8 @@ function scrollParaSecao(id) {
 }
 
 
-// ==========================================
 // MENU HAMBÚRGUER
-// ==========================================
+
 function abrirMenu() {
     document.getElementById('mobileDrawer').classList.add('open');
     document.getElementById('menuOverlay').classList.add('open');
@@ -220,9 +215,8 @@ function fecharMenu() {
     document.body.style.overflow = '';
 }
 
-// ==========================================
 // MODAIS
-// ==========================================
+
 function openModal(type) {
     const modal = document.getElementById('modal');
     const title = document.getElementById('modalTitle');
@@ -241,9 +235,7 @@ window.onclick = function(e) {
     if (e.target == document.getElementById('helpModal')) fecharAjuda();
 };
 
-// ==========================================
 // CLIMA EM TEMPO REAL — COMPLETO
-// ==========================================
 
 function grausParaDirecao(g) {
     const dirs = ['N','NNE','NE','ENE','L','ESE','SE','SSE','S','SSO','SO','OSO','O','ONO','NO','NNO'];
@@ -338,9 +330,8 @@ navigator.geolocation.getCurrentPosition(async (pos) => {
     }
 }, mostrarClimaPadrao, { timeout: 10000, maximumAge: 300000 });
 
-// ==========================================
 // CENTRAL EDUCACIONAL
-// ==========================================
+
 function mostrarInfo(tipo) {
     const conteudos = {
         agua: ['💧 Economia de Água','A irrigação inteligente usa sensores modernos para medir a umidade do solo em tempo real, acionando a irrigação apenas quando necessário. Técnicas como gotejamento e microaspersão economizam até 60% de água comparadas à irrigação convencional. O manejo correto de bacias hidrográficas e a captação de água da chuva também são aliados essenciais do produtor sustentável.'],
@@ -366,9 +357,8 @@ function mostrarInfo(tipo) {
     }, 200);
 }
 
-// ==========================================
 // DADOS DAS CIDADES
-// ==========================================
+
 const cidades = {
     "guarapuava": {
         clima: "Subtropical de altitude — invernos rigorosos com geadas frequentes (maio a agosto), verões amenos. Precipitação anual de 1.800–2.100 mm bem distribuída.",
@@ -852,9 +842,8 @@ function analisarCidade() {
     }, 200);
 }
 
-// ==========================================
 // AUTOCOMPLETE
-// ==========================================
+
 const cidadesPR = [
     'Apucarana','Arapongas','Campo Mourão','Candói','Cascavel',
     'Castro','Curitiba','Foz do Iguaçu','Francisco Beltrão',
@@ -889,17 +878,16 @@ inputCidade.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { sugestoes.innerHTML = ''; analisarCidade(); }
 });
 
-// ==========================================
 // ANIMAÇÕES SCROLL
-// ==========================================
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
 }, { threshold: 0, rootMargin: "0px 0px -50px 0px" });
 
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-// ==========================================
+
 // BOTÃO VOLTAR AO TOPO
-// ==========================================
+
 const scrollTopBtn = document.getElementById('scrollTopBtn');
 
 window.addEventListener('scroll', () => {
@@ -914,9 +902,7 @@ scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ==========================================
 // CAIXA DE ACESSIBILIDADE
-// ==========================================
 
 const acessToggle = document.getElementById('acessToggle');
 const acessPainel = document.getElementById('acessPainel');
@@ -1021,9 +1007,7 @@ document.getElementById('acessPararVoz').addEventListener('click', () => {
     btnVoz.innerHTML = '<span>🔊</span> Leitura por Voz';
 });
 
-// ==========================================
 // ÁREA DE COMENTÁRIOS
-// ==========================================
 
 const btnEnviar = document.getElementById('btnEnviarComentario');
 const comentariosLista = document.getElementById('comentariosLista');
