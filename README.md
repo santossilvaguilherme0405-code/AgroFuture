@@ -105,7 +105,7 @@ Para usar sua própria chave:
 
 ---
 
-## 📸 Seções da Página
+## 📱 Seções da Página
 
 1. **Hero** — apresentação com chamada para ação
 2. **Diagnóstico Inteligente** — busca por cidade + porte + área
@@ -118,6 +118,11 @@ Para usar sua própria chave:
 
 ---
 
+## 📸 Imagens
+
+A imagem da página inicial foi tirada pelo próprio autor.
+
+---
 ## 📚 Referências
 
 - [bemagro.com — Benefícios da IA no Campo](https://www.bemagro.com/beneficios-inteligencia-artificial-no-campo/)
