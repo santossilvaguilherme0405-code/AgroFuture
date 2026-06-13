@@ -120,7 +120,7 @@ Para usar sua própria chave:
 
 ## 📸 Imagens
 
-A imagem da página inicial foi tirada pelo próprio autor.
+A imagem utilizada é uma fotografia registrada pelo próprio autor.
 
 ---
 ## 📚 Referências
