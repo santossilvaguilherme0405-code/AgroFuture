@@ -1,7 +1,7 @@
 # 🌱 AgroFuture — Agro Forte, Futuro Sustentável
 
-> Plataforma web educacional e de diagnóstico agrícola inteligente para produtores rurais do Paraná.  
-> Desenvolvido por **Guilherme dos Santos Silva** — Colégio Estadual do Campo de São Manoel (EFM) · Agrinho 2026
+> Plataforma web educacional e de diagnóstico agrícola para produtores rurais do Paraná.  
+> Desenvolvido por **Guilherme dos Santos Silva** — Colégio Estadual do Campo de São Manoel (EFM) · Agrinho 2026 - Pogramação/Subcategoria 3
 
 ---
 
