@@ -2,7 +2,7 @@
 
 * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
 
-/*BODY — zoom via font-size no html */
+/*CORPO DO TEXTO — zoom via tamanho da fonte */
 html { font-size: 16px; }
 
 body {
@@ -20,7 +20,7 @@ body {
     z-index:-2; pointer-events:none;
 }
 
-/* HEADER */
+/* CABEÇALHO */
 header {
     position:fixed; width:100%; top:0; z-index:1000;
     background:rgba(0,0,0,0.3);
@@ -64,14 +64,14 @@ nav {
     box-shadow:0 0 1.25rem rgba(0,255,136,0.7);
 }
 
-/* Hambúrguer — escondido em desktop */
+/* Menu Hambúrguer — escondido em desktop */
 .hamburger { display:none; }
 
-/* ZOOM CONTAINER — reflow via font-size (natural reflow) */
+/* CONTAINER DE ZOOM — redimensionamento automático conforme o tamanho da fonte */
 
 #zoom-container {
     width: 100%;
-    /* zoom is applied via html font-size, everything uses rem so it reflows */
+    /* O zoom é aplicado através do tamanho da fonte HTML, usando rem para que o texto se ajuste automaticamente */
 }
 
 /* HERO */
@@ -101,7 +101,7 @@ nav {
 }
 .btn:hover { transform:scale(1.05); }
 
-/* TITLE GERAL */
+/* TÍTULO GERAL */
 
 .title { text-align:center; font-size:clamp(1.8rem, 4vw, 3.125rem); margin-bottom:3.75rem; }
 
@@ -210,11 +210,11 @@ nav {
 }
 .help-contact button:hover { transform:scale(1.05); }
 
-/* FOOTER */
+/* RODAPÉ */
 
 footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-top:3.125rem; }
 
-/* LIGHT MODE */
+/* MODO DE LUZ */
 
 .light-mode { background:#eaf7ee; color:#111; }
 .light-mode header { background:rgba(255,255,255,0.9); }
@@ -366,14 +366,14 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
 }
 .sugestao-item:hover { background:rgba(0,255,136,0.2); transform:translateX(5px); }
 
-/* MENU MOBILE — OVERLAY */
+/* MENU MOBILE — SOBREPOSIÇÃO */
 .menu-overlay {
     display:none; position:fixed; inset:0;
     background:rgba(0,0,0,0.6); z-index:1998; opacity:0; transition:0.3s;
 }
 .menu-overlay.open { display:block; opacity:1; }
 
-/* DRAWER MOBILE */
+/* GAVETA MOBILE */
 .mobile-drawer {
     position:fixed; top:0; right:-100%; width:min(80vw, 18rem);
     height:100%; background:#07140b; z-index:1999;
@@ -411,7 +411,7 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
 }
 .drawer-footer button:hover { background:rgba(0,255,136,0.12); }
 
-/* Hambúrguer */
+/* MENU Hambúrguer */
 .hamburger {
     background:none; border:none; cursor:pointer;
     display:none; flex-direction:column;
@@ -577,7 +577,7 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
 @media (min-width: 769px) and (max-width: 1024px) {
 
     nav { padding:1rem 2rem; }
-    /* Zoom buttons hidden on tablet */
+    /* Botões de zoom ocultos no tablet */
     #zoomIn, #zoomOut { display:none !important; }
 
     nav ul { gap:1.25rem; }
@@ -623,7 +623,7 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
     .nav-desktop { display:none; }
     .nav-controls-desktop { display:none; }
     .hamburger { display:flex; }
-    /* Zoom buttons hidden on mobile */
+    /* Botões de zoom ocultos na versão mobile */
     #zoomIn, #zoomOut { display:none !important; }
 
     /* Seções */
@@ -668,7 +668,7 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
     .ia-resposta { padding:1.5rem; font-size:1rem; }
     .ia-resposta h3 { font-size:1.5rem; }
 
-    /* Help */
+    /* AJUDA */
     .help-grid { grid-template-columns:1fr; }
 
     /* Scroll top — posição mobile */
@@ -697,10 +697,10 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    /* Sits on left side, VLibras on right — no conflict */
+    /* Fica do lado esquerdo, Libras do lado direito — sem conflito. */
 }
 
-/* VLibras widget forced to right side so accessibility sits cleanly on left */
+/* O widget VLibras foi para o lado direito para que a acessibilidade fique bem posicionado à esquerda. */
 [vw] { left: auto !important; right: 0 !important; }
 
 .acess-toggle {
@@ -817,7 +817,7 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
     50%       { box-shadow: 0 0 0 6px rgba(0,255,136,0.1); }
 }
 
-/* Light mode */
+/* modo de luz */
 .light-mode .acess-painel {
     background: white;
     border-color: rgba(0,150,80,0.2);
@@ -967,7 +967,7 @@ footer { padding:3.75rem; text-align:center; background:rgba(0,0,0,0.4); margin-
     color: rgba(255,255,255,0.85);
 }
 
-/* Light mode comentários */
+/* Modo de luz comentários */
 .light-mode .comentarios-form { background: white; }
 .light-mode .comentarios-form input,
 .light-mode .comentarios-form textarea {
@@ -1158,7 +1158,7 @@ footer {
 .light-mode .footer-copy { color: rgba(0, 0, 0, 0.35); }
 .light-mode .contadores-section { background: rgba(0, 180, 80, 0.04); }
 
-/* Responsive */
+/* Responsividade */
 @media (max-width: 768px) {
     .contadores-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .footer-refs { padding: 1rem; }
